@@ -17,9 +17,9 @@ class AssignMarketScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final suppliersBloc = context.read<ShoppersBloc>();
+    final request = SupplierRequest(product: productEntity.id.toString());
     return StartupContainer(
       onInit: () {
-        final request = SupplierRequest(product: productEntity.id.toString());
         suppliersBloc.add(GetSuppliers(request));
       },
       child: Scaffold(
@@ -148,21 +148,6 @@ class AssignMarketScreen extends StatelessWidget {
                                                       letterSpacing: 0.07),
                                             ),
                                           ),
-                                          // Row(
-                                          //   children: [
-                                          //     Icon(
-                                          //       Icons.shopping_cart_rounded,
-                                          //       color: Colors.orange[800],
-                                          //     ),
-                                          //     Text(
-                                          //       '54 orders fullfilled',
-                                          //       style: Theme.of(context)
-                                          //           .textTheme
-                                          //           .headlineSmall!
-                                          //           .copyWith(fontSize: 14, letterSpacing: 0.07),
-                                          //     )
-                                          //   ],
-                                          // ),
                                           InkWell(
                                             onTap: () {
                                               final request = AssignedRequest(
@@ -212,7 +197,10 @@ class AssignMarketScreen extends StatelessWidget {
                               itemCount: state.suppliers.length,
                             ),
                           )
-                        : const BlankContent()),
+                        : BlankContent(
+                            onPressed: () =>
+                                suppliersBloc.add(GetSuppliers(request)),
+                          )),
                 const SpaceH16(),
               ],
             );

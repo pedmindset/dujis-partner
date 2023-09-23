@@ -1,7 +1,7 @@
 import 'package:animation_wrappers/animation_wrappers.dart';
 import 'package:dujis_partner/core/models/models.dart';
-import 'package:dujis_partner/core/routes/routes.dart';
 import 'package:dujis_partner/src/widgets/widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dujis_partner/core/utils/utils.dart';
@@ -175,16 +175,23 @@ class OrderInfo extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   InkWell(
-                    onTap: () => Navigator.pushNamed(context, PageRoutes.track),
+                    // onTap: () => Navigator.pushNamed(context, PageRoutes.track),
                     child: Container(
                       color: Theme.of(context).scaffoldBackgroundColor,
                       child: ListTile(
                         leading: FadedScaleAnimation(
                           scaleDuration: const Duration(milliseconds: 400),
-                          child: const CircleAvatar(
-                            radius: 22.0,
-                            backgroundImage:
-                                AssetImage('assets/images/other/profile.png'),
+                          child: Container(
+                            width: 42,
+                            height: 42,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(22.0),
+                              color: Colors.grey[200],
+                            ),
+                            child: const Icon(CupertinoIcons.person_alt),
+                            // radius: 22.0,
+                            // backgroundImage:
+                            //     AssetImage('assets/images/other/profile.png'),
                           ),
                         ),
                         title: Text(

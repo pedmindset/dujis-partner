@@ -5,15 +5,19 @@ class OrdersState with _$OrdersState {
   const OrdersState._();
 
   const factory OrdersState({
-    required ShopperDataStatus status,
-    required List<OrderEntity> orders,
+    required ShNewOrdersStatus newOrdersStatus,
+    required ShPastOrdersStatus pastOrdersStatus,
+    required List<OrderEntity> newOrders,
+    required List<OrderEntity> pastOrders,
     String? message,
   }) = _OrdersState;
 
   factory OrdersState.initial() {
     return const OrdersState(
-      orders: [],
-      status: ShopperDataStatus.orderInitial,
+      newOrdersStatus: ShNewOrdersStatus.initial,
+      pastOrdersStatus: ShPastOrdersStatus.initial,
+      newOrders: [],
+      pastOrders: [],
       message: null,
     );
   }

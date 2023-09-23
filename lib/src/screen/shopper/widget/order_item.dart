@@ -1,6 +1,5 @@
 import 'package:animation_wrappers/animation_wrappers.dart';
 import 'package:dujis_partner/core/models/models.dart';
-import 'package:dujis_partner/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dujis_partner/core/utils/utils.dart';
@@ -43,7 +42,7 @@ class ShopperItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '${orderEntity.user!.name} \n',
+                  "${orderEntity.user != null ? orderEntity.user!.name : 'N/A'} \n",
                   style: Theme.of(context)
                       .textTheme
                       .headlineMedium!

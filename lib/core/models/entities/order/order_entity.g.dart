@@ -9,23 +9,14 @@ part of 'order_entity.dart';
 _$_OrderEntity _$$_OrderEntityFromJson(Map<String, dynamic> json) =>
     _$_OrderEntity(
       id: json['id'] as int?,
-      userId: json['user_id'] as int?,
-      driverId: json['driver_id'] as int?,
-      shopperId: json['shopper_id'] as int?,
-      warehouseId: json['warehouse_id'] as int?,
-      marketId: json['market_id'] as int?,
-      shippingId: json['shipping_id'] as int?,
-      createdAt: json['created_at'] as String?,
-      deliveryAddress: json['delivery_address'] == null
-          ? null
-          : DeliveryAddressEntity.fromJson(
-              json['delivery_address'] as Map<String, dynamic>),
       paid: json['paid'] as int?,
       delivered: json['delivered'] as int?,
       delayed: json['delayed'] as int?,
       packaged: json['packaged'] as int?,
       cancelled: json['cancelled'] as int?,
       assigned: json['assigned'] as int?,
+      verified: json['verified'] as int?,
+      picked: json['picked'] as int?,
       uuid: json['uuid'] as String?,
       code: json['code'] as String?,
       amount: json['amount'] as String?,
@@ -35,6 +26,8 @@ _$_OrderEntity _$$_OrderEntityFromJson(Map<String, dynamic> json) =>
       link: json['link'] as String?,
       location: json['location'] as String?,
       address: json['address'] as String?,
+      discount: json['discount'] as String?,
+      notes: json['notes'] as String?,
       user: json['user'] == null
           ? null
           : UserEntity.fromJson(json['user'] as Map<String, dynamic>),
@@ -50,25 +43,32 @@ _$_OrderEntity _$$_OrderEntityFromJson(Map<String, dynamic> json) =>
       products: (json['products'] as List<dynamic>?)
           ?.map((e) => ProductEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
+      userId: json['user_id'] as int?,
+      driverId: json['driver_id'] as int?,
+      shopperId: json['shopper_id'] as int?,
+      warehouseId: json['warehouse_id'] as int?,
+      marketId: json['market_id'] as int?,
+      shippingId: json['shipping_id'] as int?,
+      createdAt: json['created_at'] as String?,
+      packagedAt: json['packaged_at'] as String?,
+      pickedAt: json['picked_at'] as String?,
+      deliveryAddress: json['delivery_address'] == null
+          ? null
+          : DeliveryAddressEntity.fromJson(
+              json['delivery_address'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_OrderEntityToJson(_$_OrderEntity instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'user_id': instance.userId,
-      'driver_id': instance.driverId,
-      'shopper_id': instance.shopperId,
-      'warehouse_id': instance.warehouseId,
-      'market_id': instance.marketId,
-      'shipping_id': instance.shippingId,
-      'created_at': instance.createdAt,
-      'delivery_address': instance.deliveryAddress,
       'paid': instance.paid,
       'delivered': instance.delivered,
       'delayed': instance.delayed,
       'packaged': instance.packaged,
       'cancelled': instance.cancelled,
       'assigned': instance.assigned,
+      'verified': instance.verified,
+      'picked': instance.picked,
       'uuid': instance.uuid,
       'code': instance.code,
       'amount': instance.amount,
@@ -78,9 +78,21 @@ Map<String, dynamic> _$$_OrderEntityToJson(_$_OrderEntity instance) =>
       'link': instance.link,
       'location': instance.location,
       'address': instance.address,
+      'discount': instance.discount,
+      'notes': instance.notes,
       'user': instance.user,
       'warehouse': instance.warehouse,
       'shopper': instance.shopper,
       'market': instance.market,
       'products': instance.products,
+      'user_id': instance.userId,
+      'driver_id': instance.driverId,
+      'shopper_id': instance.shopperId,
+      'warehouse_id': instance.warehouseId,
+      'market_id': instance.marketId,
+      'shipping_id': instance.shippingId,
+      'created_at': instance.createdAt,
+      'packaged_at': instance.packagedAt,
+      'picked_at': instance.pickedAt,
+      'delivery_address': instance.deliveryAddress,
     };

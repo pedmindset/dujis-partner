@@ -354,14 +354,29 @@ class _MarketDashboardPageState extends State<MarketDashboardPage> {
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Center(
-                          child: Text(
-                            state.dashboardMessage ??
-                                'Sorry could not load report.',
-                            style: const TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 1.4,
-                            ),
+                          child: Column(
+                            children: [
+                              Text(
+                                state.dashboardMessage ??
+                                    'Sorry could not load report.',
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1.4,
+                                ),
+                              ),
+                              const SpaceH16(),
+                              TextButton(
+                                onPressed: () =>
+                                    supBloc.add(const SDashboard()),
+                                style: TextButton.styleFrom(
+                                    backgroundColor: Colors.blue),
+                                child: const Text(
+                                  'Retry',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -458,9 +473,9 @@ class _MarketDashboardPageState extends State<MarketDashboardPage> {
                       );
                     }
 
-                    return const BlankContent(
-                      content: 'No Latest Order',
-                    );
+                    return BlankContent(
+                        content: 'No Latest Order',
+                        onPressed: () => supBloc.add(const SLatestOrders()));
                   }),
                 ],
               ),

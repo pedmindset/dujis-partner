@@ -12,9 +12,9 @@ class PastOrdersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final orderBloc = context.read<PastOrdersBloc>();
     return StartupContainer(
       onInit: () async {
-        final orderBloc = context.read<PastOrdersBloc>();
         orderBloc.add(const ShopperPastGetOrders());
       },
       onDisposed: () {},
@@ -23,11 +23,11 @@ class PastOrdersPage extends StatelessWidget {
           listener: (context, state) {},
           builder: (context, state) {
             if (state.status.isPastOrderLoading) {
-              return Center(
+              return const Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     CircularProgressIndicator(),
                     SpaceH36(),
                     Text(
@@ -58,7 +58,9 @@ class PastOrdersPage extends StatelessWidget {
                 ),
               );
             }
-            return const BlankContent();
+            return BlankContent(
+              onPressed: () => orderBloc.add(const ShopperPastGetOrders()),
+            );
           },
         ),
       ),

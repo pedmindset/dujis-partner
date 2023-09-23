@@ -31,7 +31,9 @@ mixin _$ProductPivotEntity {
   @JsonKey(name: 'warehouse_quantity')
   int? get warehouseQuantity => throw _privateConstructorUsedError;
   @JsonKey(name: 'wholesale_price')
-  int? get wholesalePrice => throw _privateConstructorUsedError;
+  String? get wholesalePrice => throw _privateConstructorUsedError;
+  @JsonKey(name: 'wholesale_total')
+  String? get wholesaleTotal => throw _privateConstructorUsedError;
   int? get quantity => throw _privateConstructorUsedError;
   String? get price => throw _privateConstructorUsedError;
   String? get size => throw _privateConstructorUsedError;
@@ -54,7 +56,8 @@ abstract class $ProductPivotEntityCopyWith<$Res> {
       @JsonKey(name: 'warehouse_id') int? warehouseId,
       @JsonKey(name: 'market_id') int? marketId,
       @JsonKey(name: 'warehouse_quantity') int? warehouseQuantity,
-      @JsonKey(name: 'wholesale_price') int? wholesalePrice,
+      @JsonKey(name: 'wholesale_price') String? wholesalePrice,
+      @JsonKey(name: 'wholesale_total') String? wholesaleTotal,
       int? quantity,
       String? price,
       String? size});
@@ -79,6 +82,7 @@ class _$ProductPivotEntityCopyWithImpl<$Res, $Val extends ProductPivotEntity>
     Object? marketId = freezed,
     Object? warehouseQuantity = freezed,
     Object? wholesalePrice = freezed,
+    Object? wholesaleTotal = freezed,
     Object? quantity = freezed,
     Object? price = freezed,
     Object? size = freezed,
@@ -107,7 +111,11 @@ class _$ProductPivotEntityCopyWithImpl<$Res, $Val extends ProductPivotEntity>
       wholesalePrice: freezed == wholesalePrice
           ? _value.wholesalePrice
           : wholesalePrice // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
+      wholesaleTotal: freezed == wholesaleTotal
+          ? _value.wholesaleTotal
+          : wholesaleTotal // ignore: cast_nullable_to_non_nullable
+              as String?,
       quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
@@ -138,7 +146,8 @@ abstract class _$$_ProductPivotEntityCopyWith<$Res>
       @JsonKey(name: 'warehouse_id') int? warehouseId,
       @JsonKey(name: 'market_id') int? marketId,
       @JsonKey(name: 'warehouse_quantity') int? warehouseQuantity,
-      @JsonKey(name: 'wholesale_price') int? wholesalePrice,
+      @JsonKey(name: 'wholesale_price') String? wholesalePrice,
+      @JsonKey(name: 'wholesale_total') String? wholesaleTotal,
       int? quantity,
       String? price,
       String? size});
@@ -161,6 +170,7 @@ class __$$_ProductPivotEntityCopyWithImpl<$Res>
     Object? marketId = freezed,
     Object? warehouseQuantity = freezed,
     Object? wholesalePrice = freezed,
+    Object? wholesaleTotal = freezed,
     Object? quantity = freezed,
     Object? price = freezed,
     Object? size = freezed,
@@ -189,7 +199,11 @@ class __$$_ProductPivotEntityCopyWithImpl<$Res>
       wholesalePrice: freezed == wholesalePrice
           ? _value.wholesalePrice
           : wholesalePrice // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
+      wholesaleTotal: freezed == wholesaleTotal
+          ? _value.wholesaleTotal
+          : wholesaleTotal // ignore: cast_nullable_to_non_nullable
+              as String?,
       quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
@@ -216,6 +230,7 @@ class _$_ProductPivotEntity implements _ProductPivotEntity {
       @JsonKey(name: 'market_id') this.marketId,
       @JsonKey(name: 'warehouse_quantity') this.warehouseQuantity,
       @JsonKey(name: 'wholesale_price') this.wholesalePrice,
+      @JsonKey(name: 'wholesale_total') this.wholesaleTotal,
       this.quantity,
       this.price,
       this.size});
@@ -240,7 +255,10 @@ class _$_ProductPivotEntity implements _ProductPivotEntity {
   final int? warehouseQuantity;
   @override
   @JsonKey(name: 'wholesale_price')
-  final int? wholesalePrice;
+  final String? wholesalePrice;
+  @override
+  @JsonKey(name: 'wholesale_total')
+  final String? wholesaleTotal;
   @override
   final int? quantity;
   @override
@@ -250,7 +268,7 @@ class _$_ProductPivotEntity implements _ProductPivotEntity {
 
   @override
   String toString() {
-    return 'ProductPivotEntity(orderId: $orderId, productId: $productId, warehouseId: $warehouseId, marketId: $marketId, warehouseQuantity: $warehouseQuantity, wholesalePrice: $wholesalePrice, quantity: $quantity, price: $price, size: $size)';
+    return 'ProductPivotEntity(orderId: $orderId, productId: $productId, warehouseId: $warehouseId, marketId: $marketId, warehouseQuantity: $warehouseQuantity, wholesalePrice: $wholesalePrice, wholesaleTotal: $wholesaleTotal, quantity: $quantity, price: $price, size: $size)';
   }
 
   @override
@@ -269,6 +287,8 @@ class _$_ProductPivotEntity implements _ProductPivotEntity {
                 other.warehouseQuantity == warehouseQuantity) &&
             (identical(other.wholesalePrice, wholesalePrice) ||
                 other.wholesalePrice == wholesalePrice) &&
+            (identical(other.wholesaleTotal, wholesaleTotal) ||
+                other.wholesaleTotal == wholesaleTotal) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
             (identical(other.price, price) || other.price == price) &&
@@ -277,8 +297,18 @@ class _$_ProductPivotEntity implements _ProductPivotEntity {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, orderId, productId, warehouseId,
-      marketId, warehouseQuantity, wholesalePrice, quantity, price, size);
+  int get hashCode => Object.hash(
+      runtimeType,
+      orderId,
+      productId,
+      warehouseId,
+      marketId,
+      warehouseQuantity,
+      wholesalePrice,
+      wholesaleTotal,
+      quantity,
+      price,
+      size);
 
   @JsonKey(ignore: true)
   @override
@@ -302,7 +332,8 @@ abstract class _ProductPivotEntity implements ProductPivotEntity {
       @JsonKey(name: 'warehouse_id') final int? warehouseId,
       @JsonKey(name: 'market_id') final int? marketId,
       @JsonKey(name: 'warehouse_quantity') final int? warehouseQuantity,
-      @JsonKey(name: 'wholesale_price') final int? wholesalePrice,
+      @JsonKey(name: 'wholesale_price') final String? wholesalePrice,
+      @JsonKey(name: 'wholesale_total') final String? wholesaleTotal,
       final int? quantity,
       final String? price,
       final String? size}) = _$_ProductPivotEntity;
@@ -327,7 +358,10 @@ abstract class _ProductPivotEntity implements ProductPivotEntity {
   int? get warehouseQuantity;
   @override
   @JsonKey(name: 'wholesale_price')
-  int? get wholesalePrice;
+  String? get wholesalePrice;
+  @override
+  @JsonKey(name: 'wholesale_total')
+  String? get wholesaleTotal;
   @override
   int? get quantity;
   @override

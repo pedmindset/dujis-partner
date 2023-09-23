@@ -12,22 +12,35 @@ class NewOrdersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final orderBloc = context.read<OrdersBloc>();
     return StartupContainer(
       onInit: () async {
-        final orderBloc = context.read<OrdersBloc>();
-        orderBloc.add(const ShopperGetOrders());
+        orderBloc.add(const ShopperGetNewOrders());
       },
       onDisposed: () {},
       child: Scaffold(
         body: BlocConsumer<OrdersBloc, OrdersState>(
-          listener: (context, state) {},
+          listener: (context, state) {
+            if (state.newOrdersStatus.isError ||
+                state.newOrdersStatus.isNetworkError) {
+              ScaffoldMessenger.of(context)
+                ..removeCurrentSnackBar()
+                ..showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      state.message.toString(),
+                    ),
+                  ),
+                );
+            }
+          },
           builder: (context, state) {
-            if (state.status.isOrderLoading) {
-              return Center(
+            if (state.newOrdersStatus.isLoading) {
+              return const Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     CircularProgressIndicator(),
                     SpaceH36(),
                     Text(
@@ -40,25 +53,54 @@ class NewOrdersPage extends StatelessWidget {
                   ],
                 ),
               );
-            }
-            if (state.status.isOrderSuccess && state.orders.isNotEmpty) {
+            } else if (state.newOrdersStatus.isSuccess &&
+                state.newOrders.isNotEmpty) {
               return FadedSlideAnimation(
                 beginOffset: const Offset(0, 0.3),
                 endOffset: const Offset(0, 0),
                 slideCurve: Curves.linearToEaseOut,
                 child: ListView.builder(
-                  itemCount: state.orders.length,
+                  itemCount: state.newOrders.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
-                    final order = state.orders[index];
+                    final order = state.newOrders[index];
+                    // return Text(order.code.toString());
                     return ShopperItem(
                       orderEntity: order,
                     );
                   },
                 ),
               );
+            } else {
+              return BlankContent(
+                onPressed: () {
+                  orderBloc.add(const ShopperGetNewOrders());
+                },
+              );
             }
-            return const BlankContent();
+            // else if (state.status.isOrderSuccess && state.orders.isNotEmpty) {
+            //   return FadedSlideAnimation(
+            //     beginOffset: const Offset(0, 0.3),
+            //     endOffset: const Offset(0, 0),
+            //     slideCurve: Curves.linearToEaseOut,
+            //     child: ListView.builder(
+            //       itemCount: state.orders.length,
+            //       shrinkWrap: true,
+            //       itemBuilder: (context, index) {
+            //         final order = state.orders[index];
+            //         return ShopperItem(
+            //           orderEntity: order,
+            //         );
+            //       },
+            //     ),
+            //   );
+            // } else {
+            //   return BlankContent(
+            //     onPressed: () {
+            //       orderBloc.add(const ShopperGetOrders());
+            //     },
+            //   );
+            // }
           },
         ),
       ),

@@ -21,6 +21,30 @@ OrderEntity _$OrderEntityFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrderEntity {
   int? get id => throw _privateConstructorUsedError;
+  int? get paid => throw _privateConstructorUsedError;
+  int? get delivered => throw _privateConstructorUsedError;
+  int? get delayed => throw _privateConstructorUsedError;
+  int? get packaged => throw _privateConstructorUsedError;
+  int? get cancelled => throw _privateConstructorUsedError;
+  int? get assigned => throw _privateConstructorUsedError;
+  int? get verified => throw _privateConstructorUsedError;
+  int? get picked => throw _privateConstructorUsedError;
+  String? get uuid => throw _privateConstructorUsedError;
+  String? get code => throw _privateConstructorUsedError;
+  String? get amount => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  String? get lng => throw _privateConstructorUsedError;
+  String? get lat => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
+  String? get location => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
+  String? get discount => throw _privateConstructorUsedError;
+  String? get notes => throw _privateConstructorUsedError;
+  UserEntity? get user => throw _privateConstructorUsedError;
+  WarehouseEntity? get warehouse => throw _privateConstructorUsedError;
+  ShopperEntity? get shopper => throw _privateConstructorUsedError;
+  MarketEntity? get market => throw _privateConstructorUsedError;
+  List<ProductEntity>? get products => throw _privateConstructorUsedError;
   @JsonKey(name: 'user_id')
   int? get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'driver_id')
@@ -35,29 +59,13 @@ mixin _$OrderEntity {
   int? get shippingId => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   String? get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'packaged_at')
+  String? get packagedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'picked_at')
+  String? get pickedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'delivery_address')
   DeliveryAddressEntity? get deliveryAddress =>
       throw _privateConstructorUsedError;
-  int? get paid => throw _privateConstructorUsedError;
-  int? get delivered => throw _privateConstructorUsedError;
-  int? get delayed => throw _privateConstructorUsedError;
-  int? get packaged => throw _privateConstructorUsedError;
-  int? get cancelled => throw _privateConstructorUsedError;
-  int? get assigned => throw _privateConstructorUsedError;
-  String? get uuid => throw _privateConstructorUsedError;
-  String? get code => throw _privateConstructorUsedError;
-  String? get amount => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get lng => throw _privateConstructorUsedError;
-  String? get lat => throw _privateConstructorUsedError;
-  String? get link => throw _privateConstructorUsedError;
-  String? get location => throw _privateConstructorUsedError;
-  String? get address => throw _privateConstructorUsedError;
-  UserEntity? get user => throw _privateConstructorUsedError;
-  WarehouseEntity? get warehouse => throw _privateConstructorUsedError;
-  ShopperEntity? get shopper => throw _privateConstructorUsedError;
-  MarketEntity? get market => throw _privateConstructorUsedError;
-  List<ProductEntity>? get products => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -73,20 +81,14 @@ abstract class $OrderEntityCopyWith<$Res> {
   @useResult
   $Res call(
       {int? id,
-      @JsonKey(name: 'user_id') int? userId,
-      @JsonKey(name: 'driver_id') int? driverId,
-      @JsonKey(name: 'shopper_id') int? shopperId,
-      @JsonKey(name: 'warehouse_id') int? warehouseId,
-      @JsonKey(name: 'market_id') int? marketId,
-      @JsonKey(name: 'shipping_id') int? shippingId,
-      @JsonKey(name: 'created_at') String? createdAt,
-      @JsonKey(name: 'delivery_address') DeliveryAddressEntity? deliveryAddress,
       int? paid,
       int? delivered,
       int? delayed,
       int? packaged,
       int? cancelled,
       int? assigned,
+      int? verified,
+      int? picked,
       String? uuid,
       String? code,
       String? amount,
@@ -96,17 +98,39 @@ abstract class $OrderEntityCopyWith<$Res> {
       String? link,
       String? location,
       String? address,
+      String? discount,
+      String? notes,
       UserEntity? user,
       WarehouseEntity? warehouse,
       ShopperEntity? shopper,
       MarketEntity? market,
-      List<ProductEntity>? products});
+      List<ProductEntity>? products,
+      @JsonKey(name: 'user_id')
+          int? userId,
+      @JsonKey(name: 'driver_id')
+          int? driverId,
+      @JsonKey(name: 'shopper_id')
+          int? shopperId,
+      @JsonKey(name: 'warehouse_id')
+          int? warehouseId,
+      @JsonKey(name: 'market_id')
+          int? marketId,
+      @JsonKey(name: 'shipping_id')
+          int? shippingId,
+      @JsonKey(name: 'created_at')
+          String? createdAt,
+      @JsonKey(name: 'packaged_at')
+          String? packagedAt,
+      @JsonKey(name: 'picked_at')
+          String? pickedAt,
+      @JsonKey(name: 'delivery_address')
+          DeliveryAddressEntity? deliveryAddress});
 
-  $DeliveryAddressEntityCopyWith<$Res>? get deliveryAddress;
   $UserEntityCopyWith<$Res>? get user;
   $WarehouseEntityCopyWith<$Res>? get warehouse;
   $ShopperEntityCopyWith<$Res>? get shopper;
   $MarketEntityCopyWith<$Res>? get market;
+  $DeliveryAddressEntityCopyWith<$Res>? get deliveryAddress;
 }
 
 /// @nodoc
@@ -123,20 +147,14 @@ class _$OrderEntityCopyWithImpl<$Res, $Val extends OrderEntity>
   @override
   $Res call({
     Object? id = freezed,
-    Object? userId = freezed,
-    Object? driverId = freezed,
-    Object? shopperId = freezed,
-    Object? warehouseId = freezed,
-    Object? marketId = freezed,
-    Object? shippingId = freezed,
-    Object? createdAt = freezed,
-    Object? deliveryAddress = freezed,
     Object? paid = freezed,
     Object? delivered = freezed,
     Object? delayed = freezed,
     Object? packaged = freezed,
     Object? cancelled = freezed,
     Object? assigned = freezed,
+    Object? verified = freezed,
+    Object? picked = freezed,
     Object? uuid = freezed,
     Object? code = freezed,
     Object? amount = freezed,
@@ -146,49 +164,29 @@ class _$OrderEntityCopyWithImpl<$Res, $Val extends OrderEntity>
     Object? link = freezed,
     Object? location = freezed,
     Object? address = freezed,
+    Object? discount = freezed,
+    Object? notes = freezed,
     Object? user = freezed,
     Object? warehouse = freezed,
     Object? shopper = freezed,
     Object? market = freezed,
     Object? products = freezed,
+    Object? userId = freezed,
+    Object? driverId = freezed,
+    Object? shopperId = freezed,
+    Object? warehouseId = freezed,
+    Object? marketId = freezed,
+    Object? shippingId = freezed,
+    Object? createdAt = freezed,
+    Object? packagedAt = freezed,
+    Object? pickedAt = freezed,
+    Object? deliveryAddress = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      driverId: freezed == driverId
-          ? _value.driverId
-          : driverId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      shopperId: freezed == shopperId
-          ? _value.shopperId
-          : shopperId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      warehouseId: freezed == warehouseId
-          ? _value.warehouseId
-          : warehouseId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      marketId: freezed == marketId
-          ? _value.marketId
-          : marketId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      shippingId: freezed == shippingId
-          ? _value.shippingId
-          : shippingId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deliveryAddress: freezed == deliveryAddress
-          ? _value.deliveryAddress
-          : deliveryAddress // ignore: cast_nullable_to_non_nullable
-              as DeliveryAddressEntity?,
       paid: freezed == paid
           ? _value.paid
           : paid // ignore: cast_nullable_to_non_nullable
@@ -212,6 +210,14 @@ class _$OrderEntityCopyWithImpl<$Res, $Val extends OrderEntity>
       assigned: freezed == assigned
           ? _value.assigned
           : assigned // ignore: cast_nullable_to_non_nullable
+              as int?,
+      verified: freezed == verified
+          ? _value.verified
+          : verified // ignore: cast_nullable_to_non_nullable
+              as int?,
+      picked: freezed == picked
+          ? _value.picked
+          : picked // ignore: cast_nullable_to_non_nullable
               as int?,
       uuid: freezed == uuid
           ? _value.uuid
@@ -249,6 +255,14 @@ class _$OrderEntityCopyWithImpl<$Res, $Val extends OrderEntity>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
+      discount: freezed == discount
+          ? _value.discount
+          : discount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -269,20 +283,47 @@ class _$OrderEntityCopyWithImpl<$Res, $Val extends OrderEntity>
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<ProductEntity>?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      driverId: freezed == driverId
+          ? _value.driverId
+          : driverId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      shopperId: freezed == shopperId
+          ? _value.shopperId
+          : shopperId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      marketId: freezed == marketId
+          ? _value.marketId
+          : marketId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      shippingId: freezed == shippingId
+          ? _value.shippingId
+          : shippingId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      packagedAt: freezed == packagedAt
+          ? _value.packagedAt
+          : packagedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pickedAt: freezed == pickedAt
+          ? _value.pickedAt
+          : pickedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deliveryAddress: freezed == deliveryAddress
+          ? _value.deliveryAddress
+          : deliveryAddress // ignore: cast_nullable_to_non_nullable
+              as DeliveryAddressEntity?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $DeliveryAddressEntityCopyWith<$Res>? get deliveryAddress {
-    if (_value.deliveryAddress == null) {
-      return null;
-    }
-
-    return $DeliveryAddressEntityCopyWith<$Res>(_value.deliveryAddress!,
-        (value) {
-      return _then(_value.copyWith(deliveryAddress: value) as $Val);
-    });
   }
 
   @override
@@ -332,6 +373,19 @@ class _$OrderEntityCopyWithImpl<$Res, $Val extends OrderEntity>
       return _then(_value.copyWith(market: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DeliveryAddressEntityCopyWith<$Res>? get deliveryAddress {
+    if (_value.deliveryAddress == null) {
+      return null;
+    }
+
+    return $DeliveryAddressEntityCopyWith<$Res>(_value.deliveryAddress!,
+        (value) {
+      return _then(_value.copyWith(deliveryAddress: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -344,20 +398,14 @@ abstract class _$$_OrderEntityCopyWith<$Res>
   @useResult
   $Res call(
       {int? id,
-      @JsonKey(name: 'user_id') int? userId,
-      @JsonKey(name: 'driver_id') int? driverId,
-      @JsonKey(name: 'shopper_id') int? shopperId,
-      @JsonKey(name: 'warehouse_id') int? warehouseId,
-      @JsonKey(name: 'market_id') int? marketId,
-      @JsonKey(name: 'shipping_id') int? shippingId,
-      @JsonKey(name: 'created_at') String? createdAt,
-      @JsonKey(name: 'delivery_address') DeliveryAddressEntity? deliveryAddress,
       int? paid,
       int? delivered,
       int? delayed,
       int? packaged,
       int? cancelled,
       int? assigned,
+      int? verified,
+      int? picked,
       String? uuid,
       String? code,
       String? amount,
@@ -367,14 +415,34 @@ abstract class _$$_OrderEntityCopyWith<$Res>
       String? link,
       String? location,
       String? address,
+      String? discount,
+      String? notes,
       UserEntity? user,
       WarehouseEntity? warehouse,
       ShopperEntity? shopper,
       MarketEntity? market,
-      List<ProductEntity>? products});
+      List<ProductEntity>? products,
+      @JsonKey(name: 'user_id')
+          int? userId,
+      @JsonKey(name: 'driver_id')
+          int? driverId,
+      @JsonKey(name: 'shopper_id')
+          int? shopperId,
+      @JsonKey(name: 'warehouse_id')
+          int? warehouseId,
+      @JsonKey(name: 'market_id')
+          int? marketId,
+      @JsonKey(name: 'shipping_id')
+          int? shippingId,
+      @JsonKey(name: 'created_at')
+          String? createdAt,
+      @JsonKey(name: 'packaged_at')
+          String? packagedAt,
+      @JsonKey(name: 'picked_at')
+          String? pickedAt,
+      @JsonKey(name: 'delivery_address')
+          DeliveryAddressEntity? deliveryAddress});
 
-  @override
-  $DeliveryAddressEntityCopyWith<$Res>? get deliveryAddress;
   @override
   $UserEntityCopyWith<$Res>? get user;
   @override
@@ -383,6 +451,8 @@ abstract class _$$_OrderEntityCopyWith<$Res>
   $ShopperEntityCopyWith<$Res>? get shopper;
   @override
   $MarketEntityCopyWith<$Res>? get market;
+  @override
+  $DeliveryAddressEntityCopyWith<$Res>? get deliveryAddress;
 }
 
 /// @nodoc
@@ -397,20 +467,14 @@ class __$$_OrderEntityCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? userId = freezed,
-    Object? driverId = freezed,
-    Object? shopperId = freezed,
-    Object? warehouseId = freezed,
-    Object? marketId = freezed,
-    Object? shippingId = freezed,
-    Object? createdAt = freezed,
-    Object? deliveryAddress = freezed,
     Object? paid = freezed,
     Object? delivered = freezed,
     Object? delayed = freezed,
     Object? packaged = freezed,
     Object? cancelled = freezed,
     Object? assigned = freezed,
+    Object? verified = freezed,
+    Object? picked = freezed,
     Object? uuid = freezed,
     Object? code = freezed,
     Object? amount = freezed,
@@ -420,49 +484,29 @@ class __$$_OrderEntityCopyWithImpl<$Res>
     Object? link = freezed,
     Object? location = freezed,
     Object? address = freezed,
+    Object? discount = freezed,
+    Object? notes = freezed,
     Object? user = freezed,
     Object? warehouse = freezed,
     Object? shopper = freezed,
     Object? market = freezed,
     Object? products = freezed,
+    Object? userId = freezed,
+    Object? driverId = freezed,
+    Object? shopperId = freezed,
+    Object? warehouseId = freezed,
+    Object? marketId = freezed,
+    Object? shippingId = freezed,
+    Object? createdAt = freezed,
+    Object? packagedAt = freezed,
+    Object? pickedAt = freezed,
+    Object? deliveryAddress = freezed,
   }) {
     return _then(_$_OrderEntity(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      driverId: freezed == driverId
-          ? _value.driverId
-          : driverId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      shopperId: freezed == shopperId
-          ? _value.shopperId
-          : shopperId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      warehouseId: freezed == warehouseId
-          ? _value.warehouseId
-          : warehouseId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      marketId: freezed == marketId
-          ? _value.marketId
-          : marketId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      shippingId: freezed == shippingId
-          ? _value.shippingId
-          : shippingId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deliveryAddress: freezed == deliveryAddress
-          ? _value.deliveryAddress
-          : deliveryAddress // ignore: cast_nullable_to_non_nullable
-              as DeliveryAddressEntity?,
       paid: freezed == paid
           ? _value.paid
           : paid // ignore: cast_nullable_to_non_nullable
@@ -486,6 +530,14 @@ class __$$_OrderEntityCopyWithImpl<$Res>
       assigned: freezed == assigned
           ? _value.assigned
           : assigned // ignore: cast_nullable_to_non_nullable
+              as int?,
+      verified: freezed == verified
+          ? _value.verified
+          : verified // ignore: cast_nullable_to_non_nullable
+              as int?,
+      picked: freezed == picked
+          ? _value.picked
+          : picked // ignore: cast_nullable_to_non_nullable
               as int?,
       uuid: freezed == uuid
           ? _value.uuid
@@ -523,6 +575,14 @@ class __$$_OrderEntityCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
+      discount: freezed == discount
+          ? _value.discount
+          : discount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -543,6 +603,46 @@ class __$$_OrderEntityCopyWithImpl<$Res>
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<ProductEntity>?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      driverId: freezed == driverId
+          ? _value.driverId
+          : driverId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      shopperId: freezed == shopperId
+          ? _value.shopperId
+          : shopperId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      marketId: freezed == marketId
+          ? _value.marketId
+          : marketId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      shippingId: freezed == shippingId
+          ? _value.shippingId
+          : shippingId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      packagedAt: freezed == packagedAt
+          ? _value.packagedAt
+          : packagedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pickedAt: freezed == pickedAt
+          ? _value.pickedAt
+          : pickedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deliveryAddress: freezed == deliveryAddress
+          ? _value.deliveryAddress
+          : deliveryAddress // ignore: cast_nullable_to_non_nullable
+              as DeliveryAddressEntity?,
     ));
   }
 }
@@ -552,20 +652,14 @@ class __$$_OrderEntityCopyWithImpl<$Res>
 class _$_OrderEntity implements _OrderEntity {
   _$_OrderEntity(
       {this.id,
-      @JsonKey(name: 'user_id') this.userId,
-      @JsonKey(name: 'driver_id') this.driverId,
-      @JsonKey(name: 'shopper_id') this.shopperId,
-      @JsonKey(name: 'warehouse_id') this.warehouseId,
-      @JsonKey(name: 'market_id') this.marketId,
-      @JsonKey(name: 'shipping_id') this.shippingId,
-      @JsonKey(name: 'created_at') this.createdAt,
-      @JsonKey(name: 'delivery_address') this.deliveryAddress,
       this.paid,
       this.delivered,
       this.delayed,
       this.packaged,
       this.cancelled,
       this.assigned,
+      this.verified,
+      this.picked,
       this.uuid,
       this.code,
       this.amount,
@@ -575,11 +669,23 @@ class _$_OrderEntity implements _OrderEntity {
       this.link,
       this.location,
       this.address,
+      this.discount,
+      this.notes,
       this.user,
       this.warehouse,
       this.shopper,
       this.market,
-      final List<ProductEntity>? products})
+      final List<ProductEntity>? products,
+      @JsonKey(name: 'user_id') this.userId,
+      @JsonKey(name: 'driver_id') this.driverId,
+      @JsonKey(name: 'shopper_id') this.shopperId,
+      @JsonKey(name: 'warehouse_id') this.warehouseId,
+      @JsonKey(name: 'market_id') this.marketId,
+      @JsonKey(name: 'shipping_id') this.shippingId,
+      @JsonKey(name: 'created_at') this.createdAt,
+      @JsonKey(name: 'packaged_at') this.packagedAt,
+      @JsonKey(name: 'picked_at') this.pickedAt,
+      @JsonKey(name: 'delivery_address') this.deliveryAddress})
       : _products = products;
 
   factory _$_OrderEntity.fromJson(Map<String, dynamic> json) =>
@@ -587,6 +693,62 @@ class _$_OrderEntity implements _OrderEntity {
 
   @override
   final int? id;
+  @override
+  final int? paid;
+  @override
+  final int? delivered;
+  @override
+  final int? delayed;
+  @override
+  final int? packaged;
+  @override
+  final int? cancelled;
+  @override
+  final int? assigned;
+  @override
+  final int? verified;
+  @override
+  final int? picked;
+  @override
+  final String? uuid;
+  @override
+  final String? code;
+  @override
+  final String? amount;
+  @override
+  final String? status;
+  @override
+  final String? lng;
+  @override
+  final String? lat;
+  @override
+  final String? link;
+  @override
+  final String? location;
+  @override
+  final String? address;
+  @override
+  final String? discount;
+  @override
+  final String? notes;
+  @override
+  final UserEntity? user;
+  @override
+  final WarehouseEntity? warehouse;
+  @override
+  final ShopperEntity? shopper;
+  @override
+  final MarketEntity? market;
+  final List<ProductEntity>? _products;
+  @override
+  List<ProductEntity>? get products {
+    final value = _products;
+    if (value == null) return null;
+    if (_products is EqualUnmodifiableListView) return _products;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   @JsonKey(name: 'user_id')
   final int? userId;
@@ -609,59 +771,18 @@ class _$_OrderEntity implements _OrderEntity {
   @JsonKey(name: 'created_at')
   final String? createdAt;
   @override
+  @JsonKey(name: 'packaged_at')
+  final String? packagedAt;
+  @override
+  @JsonKey(name: 'picked_at')
+  final String? pickedAt;
+  @override
   @JsonKey(name: 'delivery_address')
   final DeliveryAddressEntity? deliveryAddress;
-  @override
-  final int? paid;
-  @override
-  final int? delivered;
-  @override
-  final int? delayed;
-  @override
-  final int? packaged;
-  @override
-  final int? cancelled;
-  @override
-  final int? assigned;
-  @override
-  final String? uuid;
-  @override
-  final String? code;
-  @override
-  final String? amount;
-  @override
-  final String? status;
-  @override
-  final String? lng;
-  @override
-  final String? lat;
-  @override
-  final String? link;
-  @override
-  final String? location;
-  @override
-  final String? address;
-  @override
-  final UserEntity? user;
-  @override
-  final WarehouseEntity? warehouse;
-  @override
-  final ShopperEntity? shopper;
-  @override
-  final MarketEntity? market;
-  final List<ProductEntity>? _products;
-  @override
-  List<ProductEntity>? get products {
-    final value = _products;
-    if (value == null) return null;
-    if (_products is EqualUnmodifiableListView) return _products;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
 
   @override
   String toString() {
-    return 'OrderEntity(id: $id, userId: $userId, driverId: $driverId, shopperId: $shopperId, warehouseId: $warehouseId, marketId: $marketId, shippingId: $shippingId, createdAt: $createdAt, deliveryAddress: $deliveryAddress, paid: $paid, delivered: $delivered, delayed: $delayed, packaged: $packaged, cancelled: $cancelled, assigned: $assigned, uuid: $uuid, code: $code, amount: $amount, status: $status, lng: $lng, lat: $lat, link: $link, location: $location, address: $address, user: $user, warehouse: $warehouse, shopper: $shopper, market: $market, products: $products)';
+    return 'OrderEntity(id: $id, paid: $paid, delivered: $delivered, delayed: $delayed, packaged: $packaged, cancelled: $cancelled, assigned: $assigned, verified: $verified, picked: $picked, uuid: $uuid, code: $code, amount: $amount, status: $status, lng: $lng, lat: $lat, link: $link, location: $location, address: $address, discount: $discount, notes: $notes, user: $user, warehouse: $warehouse, shopper: $shopper, market: $market, products: $products, userId: $userId, driverId: $driverId, shopperId: $shopperId, warehouseId: $warehouseId, marketId: $marketId, shippingId: $shippingId, createdAt: $createdAt, packagedAt: $packagedAt, pickedAt: $pickedAt, deliveryAddress: $deliveryAddress)';
   }
 
   @override
@@ -670,6 +791,38 @@ class _$_OrderEntity implements _OrderEntity {
         (other.runtimeType == runtimeType &&
             other is _$_OrderEntity &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.paid, paid) || other.paid == paid) &&
+            (identical(other.delivered, delivered) ||
+                other.delivered == delivered) &&
+            (identical(other.delayed, delayed) || other.delayed == delayed) &&
+            (identical(other.packaged, packaged) ||
+                other.packaged == packaged) &&
+            (identical(other.cancelled, cancelled) ||
+                other.cancelled == cancelled) &&
+            (identical(other.assigned, assigned) ||
+                other.assigned == assigned) &&
+            (identical(other.verified, verified) ||
+                other.verified == verified) &&
+            (identical(other.picked, picked) || other.picked == picked) &&
+            (identical(other.uuid, uuid) || other.uuid == uuid) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.lng, lng) || other.lng == lng) &&
+            (identical(other.lat, lat) || other.lat == lat) &&
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.location, location) ||
+                other.location == location) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.discount, discount) ||
+                other.discount == discount) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.warehouse, warehouse) ||
+                other.warehouse == warehouse) &&
+            (identical(other.shopper, shopper) || other.shopper == shopper) &&
+            (identical(other.market, market) || other.market == market) &&
+            const DeepCollectionEquality().equals(other._products, _products) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.driverId, driverId) ||
                 other.driverId == driverId) &&
@@ -683,34 +836,12 @@ class _$_OrderEntity implements _OrderEntity {
                 other.shippingId == shippingId) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
+            (identical(other.packagedAt, packagedAt) ||
+                other.packagedAt == packagedAt) &&
+            (identical(other.pickedAt, pickedAt) ||
+                other.pickedAt == pickedAt) &&
             (identical(other.deliveryAddress, deliveryAddress) ||
-                other.deliveryAddress == deliveryAddress) &&
-            (identical(other.paid, paid) || other.paid == paid) &&
-            (identical(other.delivered, delivered) ||
-                other.delivered == delivered) &&
-            (identical(other.delayed, delayed) || other.delayed == delayed) &&
-            (identical(other.packaged, packaged) ||
-                other.packaged == packaged) &&
-            (identical(other.cancelled, cancelled) ||
-                other.cancelled == cancelled) &&
-            (identical(other.assigned, assigned) ||
-                other.assigned == assigned) &&
-            (identical(other.uuid, uuid) || other.uuid == uuid) &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.amount, amount) || other.amount == amount) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.lng, lng) || other.lng == lng) &&
-            (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.link, link) || other.link == link) &&
-            (identical(other.location, location) ||
-                other.location == location) &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.warehouse, warehouse) ||
-                other.warehouse == warehouse) &&
-            (identical(other.shopper, shopper) || other.shopper == shopper) &&
-            (identical(other.market, market) || other.market == market) &&
-            const DeepCollectionEquality().equals(other._products, _products));
+                other.deliveryAddress == deliveryAddress));
   }
 
   @JsonKey(ignore: true)
@@ -718,20 +849,14 @@ class _$_OrderEntity implements _OrderEntity {
   int get hashCode => Object.hashAll([
         runtimeType,
         id,
-        userId,
-        driverId,
-        shopperId,
-        warehouseId,
-        marketId,
-        shippingId,
-        createdAt,
-        deliveryAddress,
         paid,
         delivered,
         delayed,
         packaged,
         cancelled,
         assigned,
+        verified,
+        picked,
         uuid,
         code,
         amount,
@@ -741,11 +866,23 @@ class _$_OrderEntity implements _OrderEntity {
         link,
         location,
         address,
+        discount,
+        notes,
         user,
         warehouse,
         shopper,
         market,
-        const DeepCollectionEquality().hash(_products)
+        const DeepCollectionEquality().hash(_products),
+        userId,
+        driverId,
+        shopperId,
+        warehouseId,
+        marketId,
+        shippingId,
+        createdAt,
+        packagedAt,
+        pickedAt,
+        deliveryAddress
       ]);
 
   @JsonKey(ignore: true)
@@ -765,6 +902,30 @@ class _$_OrderEntity implements _OrderEntity {
 abstract class _OrderEntity implements OrderEntity {
   factory _OrderEntity(
       {final int? id,
+      final int? paid,
+      final int? delivered,
+      final int? delayed,
+      final int? packaged,
+      final int? cancelled,
+      final int? assigned,
+      final int? verified,
+      final int? picked,
+      final String? uuid,
+      final String? code,
+      final String? amount,
+      final String? status,
+      final String? lng,
+      final String? lat,
+      final String? link,
+      final String? location,
+      final String? address,
+      final String? discount,
+      final String? notes,
+      final UserEntity? user,
+      final WarehouseEntity? warehouse,
+      final ShopperEntity? shopper,
+      final MarketEntity? market,
+      final List<ProductEntity>? products,
       @JsonKey(name: 'user_id')
           final int? userId,
       @JsonKey(name: 'driver_id')
@@ -779,34 +940,66 @@ abstract class _OrderEntity implements OrderEntity {
           final int? shippingId,
       @JsonKey(name: 'created_at')
           final String? createdAt,
+      @JsonKey(name: 'packaged_at')
+          final String? packagedAt,
+      @JsonKey(name: 'picked_at')
+          final String? pickedAt,
       @JsonKey(name: 'delivery_address')
-          final DeliveryAddressEntity? deliveryAddress,
-      final int? paid,
-      final int? delivered,
-      final int? delayed,
-      final int? packaged,
-      final int? cancelled,
-      final int? assigned,
-      final String? uuid,
-      final String? code,
-      final String? amount,
-      final String? status,
-      final String? lng,
-      final String? lat,
-      final String? link,
-      final String? location,
-      final String? address,
-      final UserEntity? user,
-      final WarehouseEntity? warehouse,
-      final ShopperEntity? shopper,
-      final MarketEntity? market,
-      final List<ProductEntity>? products}) = _$_OrderEntity;
+          final DeliveryAddressEntity? deliveryAddress}) = _$_OrderEntity;
 
   factory _OrderEntity.fromJson(Map<String, dynamic> json) =
       _$_OrderEntity.fromJson;
 
   @override
   int? get id;
+  @override
+  int? get paid;
+  @override
+  int? get delivered;
+  @override
+  int? get delayed;
+  @override
+  int? get packaged;
+  @override
+  int? get cancelled;
+  @override
+  int? get assigned;
+  @override
+  int? get verified;
+  @override
+  int? get picked;
+  @override
+  String? get uuid;
+  @override
+  String? get code;
+  @override
+  String? get amount;
+  @override
+  String? get status;
+  @override
+  String? get lng;
+  @override
+  String? get lat;
+  @override
+  String? get link;
+  @override
+  String? get location;
+  @override
+  String? get address;
+  @override
+  String? get discount;
+  @override
+  String? get notes;
+  @override
+  UserEntity? get user;
+  @override
+  WarehouseEntity? get warehouse;
+  @override
+  ShopperEntity? get shopper;
+  @override
+  MarketEntity? get market;
+  @override
+  List<ProductEntity>? get products;
   @override
   @JsonKey(name: 'user_id')
   int? get userId;
@@ -829,48 +1022,14 @@ abstract class _OrderEntity implements OrderEntity {
   @JsonKey(name: 'created_at')
   String? get createdAt;
   @override
+  @JsonKey(name: 'packaged_at')
+  String? get packagedAt;
+  @override
+  @JsonKey(name: 'picked_at')
+  String? get pickedAt;
+  @override
   @JsonKey(name: 'delivery_address')
   DeliveryAddressEntity? get deliveryAddress;
-  @override
-  int? get paid;
-  @override
-  int? get delivered;
-  @override
-  int? get delayed;
-  @override
-  int? get packaged;
-  @override
-  int? get cancelled;
-  @override
-  int? get assigned;
-  @override
-  String? get uuid;
-  @override
-  String? get code;
-  @override
-  String? get amount;
-  @override
-  String? get status;
-  @override
-  String? get lng;
-  @override
-  String? get lat;
-  @override
-  String? get link;
-  @override
-  String? get location;
-  @override
-  String? get address;
-  @override
-  UserEntity? get user;
-  @override
-  WarehouseEntity? get warehouse;
-  @override
-  ShopperEntity? get shopper;
-  @override
-  MarketEntity? get market;
-  @override
-  List<ProductEntity>? get products;
   @override
   @JsonKey(ignore: true)
   _$$_OrderEntityCopyWith<_$_OrderEntity> get copyWith =>

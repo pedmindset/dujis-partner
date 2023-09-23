@@ -20,22 +20,31 @@ ProductEntity _$ProductEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductEntity {
-  @JsonKey(name: 'product_category_id')
-  int? get productCategoryId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'wholesale_price')
-  String? get wholesalePrice => throw _privateConstructorUsedError;
-  @JsonKey(name: 'cover_photo')
-  String? get coverPhoto => throw _privateConstructorUsedError;
+// int? id,
+// int? market,
+// int? active,
+// String? uuid,
+// String? name,
+// String? quantity,
+// String? price,
+// String? description,
+// String? featured,
+// String? thumb,
+// ProductPivotEntity? pivot,
+// @JsonKey(name: 'product_category_id') int? productCategoryId,
+// @JsonKey(name: 'wholesale_price') String? wholesalePrice,
+// @JsonKey(name: 'cover_photo') String? coverPhoto,
   int? get id => throw _privateConstructorUsedError;
-  int? get quantity => throw _privateConstructorUsedError;
-  int? get market => throw _privateConstructorUsedError;
-  int? get active => throw _privateConstructorUsedError;
-  String? get uuid => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get price => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get featured => throw _privateConstructorUsedError;
-  String? get thumb => throw _privateConstructorUsedError;
+  int? get market => throw _privateConstructorUsedError; // int? active,
+// String? uuid,
+  String? get name => throw _privateConstructorUsedError; // String? slug,
+// String? price,
+// String? quantity,
+// String? description,
+// String? featured,
+// String? code,
+// String? barcode,
+// String? thumb,
   ProductPivotEntity? get pivot => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,21 +59,7 @@ abstract class $ProductEntityCopyWith<$Res> {
           ProductEntity value, $Res Function(ProductEntity) then) =
       _$ProductEntityCopyWithImpl<$Res, ProductEntity>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'product_category_id') int? productCategoryId,
-      @JsonKey(name: 'wholesale_price') String? wholesalePrice,
-      @JsonKey(name: 'cover_photo') String? coverPhoto,
-      int? id,
-      int? quantity,
-      int? market,
-      int? active,
-      String? uuid,
-      String? name,
-      String? price,
-      String? description,
-      String? featured,
-      String? thumb,
-      ProductPivotEntity? pivot});
+  $Res call({int? id, int? market, String? name, ProductPivotEntity? pivot});
 
   $ProductPivotEntityCopyWith<$Res>? get pivot;
 }
@@ -82,73 +77,23 @@ class _$ProductEntityCopyWithImpl<$Res, $Val extends ProductEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? productCategoryId = freezed,
-    Object? wholesalePrice = freezed,
-    Object? coverPhoto = freezed,
     Object? id = freezed,
-    Object? quantity = freezed,
     Object? market = freezed,
-    Object? active = freezed,
-    Object? uuid = freezed,
     Object? name = freezed,
-    Object? price = freezed,
-    Object? description = freezed,
-    Object? featured = freezed,
-    Object? thumb = freezed,
     Object? pivot = freezed,
   }) {
     return _then(_value.copyWith(
-      productCategoryId: freezed == productCategoryId
-          ? _value.productCategoryId
-          : productCategoryId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      wholesalePrice: freezed == wholesalePrice
-          ? _value.wholesalePrice
-          : wholesalePrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      coverPhoto: freezed == coverPhoto
-          ? _value.coverPhoto
-          : coverPhoto // ignore: cast_nullable_to_non_nullable
-              as String?,
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
               as int?,
       market: freezed == market
           ? _value.market
           : market // ignore: cast_nullable_to_non_nullable
               as int?,
-      active: freezed == active
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as int?,
-      uuid: freezed == uuid
-          ? _value.uuid
-          : uuid // ignore: cast_nullable_to_non_nullable
-              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      featured: freezed == featured
-          ? _value.featured
-          : featured // ignore: cast_nullable_to_non_nullable
-              as String?,
-      thumb: freezed == thumb
-          ? _value.thumb
-          : thumb // ignore: cast_nullable_to_non_nullable
               as String?,
       pivot: freezed == pivot
           ? _value.pivot
@@ -178,21 +123,7 @@ abstract class _$$_ProductEntityCopyWith<$Res>
       __$$_ProductEntityCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'product_category_id') int? productCategoryId,
-      @JsonKey(name: 'wholesale_price') String? wholesalePrice,
-      @JsonKey(name: 'cover_photo') String? coverPhoto,
-      int? id,
-      int? quantity,
-      int? market,
-      int? active,
-      String? uuid,
-      String? name,
-      String? price,
-      String? description,
-      String? featured,
-      String? thumb,
-      ProductPivotEntity? pivot});
+  $Res call({int? id, int? market, String? name, ProductPivotEntity? pivot});
 
   @override
   $ProductPivotEntityCopyWith<$Res>? get pivot;
@@ -209,73 +140,23 @@ class __$$_ProductEntityCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? productCategoryId = freezed,
-    Object? wholesalePrice = freezed,
-    Object? coverPhoto = freezed,
     Object? id = freezed,
-    Object? quantity = freezed,
     Object? market = freezed,
-    Object? active = freezed,
-    Object? uuid = freezed,
     Object? name = freezed,
-    Object? price = freezed,
-    Object? description = freezed,
-    Object? featured = freezed,
-    Object? thumb = freezed,
     Object? pivot = freezed,
   }) {
     return _then(_$_ProductEntity(
-      productCategoryId: freezed == productCategoryId
-          ? _value.productCategoryId
-          : productCategoryId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      wholesalePrice: freezed == wholesalePrice
-          ? _value.wholesalePrice
-          : wholesalePrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      coverPhoto: freezed == coverPhoto
-          ? _value.coverPhoto
-          : coverPhoto // ignore: cast_nullable_to_non_nullable
-              as String?,
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
               as int?,
       market: freezed == market
           ? _value.market
           : market // ignore: cast_nullable_to_non_nullable
               as int?,
-      active: freezed == active
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as int?,
-      uuid: freezed == uuid
-          ? _value.uuid
-          : uuid // ignore: cast_nullable_to_non_nullable
-              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      featured: freezed == featured
-          ? _value.featured
-          : featured // ignore: cast_nullable_to_non_nullable
-              as String?,
-      thumb: freezed == thumb
-          ? _value.thumb
-          : thumb // ignore: cast_nullable_to_non_nullable
               as String?,
       pivot: freezed == pivot
           ? _value.pivot
@@ -288,60 +169,47 @@ class __$$_ProductEntityCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ProductEntity implements _ProductEntity {
-  _$_ProductEntity(
-      {@JsonKey(name: 'product_category_id') this.productCategoryId,
-      @JsonKey(name: 'wholesale_price') this.wholesalePrice,
-      @JsonKey(name: 'cover_photo') this.coverPhoto,
-      this.id,
-      this.quantity,
-      this.market,
-      this.active,
-      this.uuid,
-      this.name,
-      this.price,
-      this.description,
-      this.featured,
-      this.thumb,
-      this.pivot});
+  _$_ProductEntity({this.id, this.market, this.name, this.pivot});
 
   factory _$_ProductEntity.fromJson(Map<String, dynamic> json) =>
       _$$_ProductEntityFromJson(json);
 
-  @override
-  @JsonKey(name: 'product_category_id')
-  final int? productCategoryId;
-  @override
-  @JsonKey(name: 'wholesale_price')
-  final String? wholesalePrice;
-  @override
-  @JsonKey(name: 'cover_photo')
-  final String? coverPhoto;
+// int? id,
+// int? market,
+// int? active,
+// String? uuid,
+// String? name,
+// String? quantity,
+// String? price,
+// String? description,
+// String? featured,
+// String? thumb,
+// ProductPivotEntity? pivot,
+// @JsonKey(name: 'product_category_id') int? productCategoryId,
+// @JsonKey(name: 'wholesale_price') String? wholesalePrice,
+// @JsonKey(name: 'cover_photo') String? coverPhoto,
   @override
   final int? id;
   @override
-  final int? quantity;
-  @override
   final int? market;
-  @override
-  final int? active;
-  @override
-  final String? uuid;
+// int? active,
+// String? uuid,
   @override
   final String? name;
-  @override
-  final String? price;
-  @override
-  final String? description;
-  @override
-  final String? featured;
-  @override
-  final String? thumb;
+// String? slug,
+// String? price,
+// String? quantity,
+// String? description,
+// String? featured,
+// String? code,
+// String? barcode,
+// String? thumb,
   @override
   final ProductPivotEntity? pivot;
 
   @override
   String toString() {
-    return 'ProductEntity(productCategoryId: $productCategoryId, wholesalePrice: $wholesalePrice, coverPhoto: $coverPhoto, id: $id, quantity: $quantity, market: $market, active: $active, uuid: $uuid, name: $name, price: $price, description: $description, featured: $featured, thumb: $thumb, pivot: $pivot)';
+    return 'ProductEntity(id: $id, market: $market, name: $name, pivot: $pivot)';
   }
 
   @override
@@ -349,46 +217,15 @@ class _$_ProductEntity implements _ProductEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ProductEntity &&
-            (identical(other.productCategoryId, productCategoryId) ||
-                other.productCategoryId == productCategoryId) &&
-            (identical(other.wholesalePrice, wholesalePrice) ||
-                other.wholesalePrice == wholesalePrice) &&
-            (identical(other.coverPhoto, coverPhoto) ||
-                other.coverPhoto == coverPhoto) &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.quantity, quantity) ||
-                other.quantity == quantity) &&
             (identical(other.market, market) || other.market == market) &&
-            (identical(other.active, active) || other.active == active) &&
-            (identical(other.uuid, uuid) || other.uuid == uuid) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.price, price) || other.price == price) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.featured, featured) ||
-                other.featured == featured) &&
-            (identical(other.thumb, thumb) || other.thumb == thumb) &&
             (identical(other.pivot, pivot) || other.pivot == pivot));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      productCategoryId,
-      wholesalePrice,
-      coverPhoto,
-      id,
-      quantity,
-      market,
-      active,
-      uuid,
-      name,
-      price,
-      description,
-      featured,
-      thumb,
-      pivot);
+  int get hashCode => Object.hash(runtimeType, id, market, name, pivot);
 
   @JsonKey(ignore: true)
   @override
@@ -406,54 +243,42 @@ class _$_ProductEntity implements _ProductEntity {
 
 abstract class _ProductEntity implements ProductEntity {
   factory _ProductEntity(
-      {@JsonKey(name: 'product_category_id') final int? productCategoryId,
-      @JsonKey(name: 'wholesale_price') final String? wholesalePrice,
-      @JsonKey(name: 'cover_photo') final String? coverPhoto,
-      final int? id,
-      final int? quantity,
+      {final int? id,
       final int? market,
-      final int? active,
-      final String? uuid,
       final String? name,
-      final String? price,
-      final String? description,
-      final String? featured,
-      final String? thumb,
       final ProductPivotEntity? pivot}) = _$_ProductEntity;
 
   factory _ProductEntity.fromJson(Map<String, dynamic> json) =
       _$_ProductEntity.fromJson;
 
-  @override
-  @JsonKey(name: 'product_category_id')
-  int? get productCategoryId;
-  @override
-  @JsonKey(name: 'wholesale_price')
-  String? get wholesalePrice;
-  @override
-  @JsonKey(name: 'cover_photo')
-  String? get coverPhoto;
-  @override
+  @override // int? id,
+// int? market,
+// int? active,
+// String? uuid,
+// String? name,
+// String? quantity,
+// String? price,
+// String? description,
+// String? featured,
+// String? thumb,
+// ProductPivotEntity? pivot,
+// @JsonKey(name: 'product_category_id') int? productCategoryId,
+// @JsonKey(name: 'wholesale_price') String? wholesalePrice,
+// @JsonKey(name: 'cover_photo') String? coverPhoto,
   int? get id;
   @override
-  int? get quantity;
-  @override
   int? get market;
-  @override
-  int? get active;
-  @override
-  String? get uuid;
-  @override
+  @override // int? active,
+// String? uuid,
   String? get name;
-  @override
-  String? get price;
-  @override
-  String? get description;
-  @override
-  String? get featured;
-  @override
-  String? get thumb;
-  @override
+  @override // String? slug,
+// String? price,
+// String? quantity,
+// String? description,
+// String? featured,
+// String? code,
+// String? barcode,
+// String? thumb,
   ProductPivotEntity? get pivot;
   @override
   @JsonKey(ignore: true)

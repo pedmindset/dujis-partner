@@ -20,18 +20,20 @@ WarehouseEntity _$WarehouseEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WarehouseEntity {
-  @JsonKey(name: 'user_id')
-  dynamic get userId => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
   String? get code => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
+  String? get region => throw _privateConstructorUsedError;
   String? get lat => throw _privateConstructorUsedError;
   String? get lng => throw _privateConstructorUsedError;
   String? get active => throw _privateConstructorUsedError;
   String? get main => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
+  int? get userId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,17 +48,19 @@ abstract class $WarehouseEntityCopyWith<$Res> {
       _$WarehouseEntityCopyWithImpl<$Res, WarehouseEntity>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') dynamic userId,
-      int? id,
+      {int? id,
       String? code,
       String? name,
       String? phone,
+      String? email,
       String? city,
+      String? region,
       String? lat,
       String? lng,
       String? active,
       String? main,
-      String? address});
+      String? address,
+      @JsonKey(name: 'user_id') int? userId});
 }
 
 /// @nodoc
@@ -72,23 +76,21 @@ class _$WarehouseEntityCopyWithImpl<$Res, $Val extends WarehouseEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = freezed,
     Object? id = freezed,
     Object? code = freezed,
     Object? name = freezed,
     Object? phone = freezed,
+    Object? email = freezed,
     Object? city = freezed,
+    Object? region = freezed,
     Object? lat = freezed,
     Object? lng = freezed,
     Object? active = freezed,
     Object? main = freezed,
     Object? address = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_value.copyWith(
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as dynamic,
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -105,9 +107,17 @@ class _$WarehouseEntityCopyWithImpl<$Res, $Val extends WarehouseEntity>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
       city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      region: freezed == region
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
               as String?,
       lat: freezed == lat
           ? _value.lat
@@ -129,6 +139,10 @@ class _$WarehouseEntityCopyWithImpl<$Res, $Val extends WarehouseEntity>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -142,17 +156,19 @@ abstract class _$$_WarehouseEntityCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') dynamic userId,
-      int? id,
+      {int? id,
       String? code,
       String? name,
       String? phone,
+      String? email,
       String? city,
+      String? region,
       String? lat,
       String? lng,
       String? active,
       String? main,
-      String? address});
+      String? address,
+      @JsonKey(name: 'user_id') int? userId});
 }
 
 /// @nodoc
@@ -166,20 +182,21 @@ class __$$_WarehouseEntityCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = freezed,
     Object? id = freezed,
     Object? code = freezed,
     Object? name = freezed,
     Object? phone = freezed,
+    Object? email = freezed,
     Object? city = freezed,
+    Object? region = freezed,
     Object? lat = freezed,
     Object? lng = freezed,
     Object? active = freezed,
     Object? main = freezed,
     Object? address = freezed,
+    Object? userId = freezed,
   }) {
     return _then(_$_WarehouseEntity(
-      userId: freezed == userId ? _value.userId! : userId,
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -196,9 +213,17 @@ class __$$_WarehouseEntityCopyWithImpl<$Res>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
       city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      region: freezed == region
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
               as String?,
       lat: freezed == lat
           ? _value.lat
@@ -220,6 +245,10 @@ class __$$_WarehouseEntityCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -228,24 +257,23 @@ class __$$_WarehouseEntityCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_WarehouseEntity implements _WarehouseEntity {
   _$_WarehouseEntity(
-      {@JsonKey(name: 'user_id') this.userId,
-      this.id,
+      {this.id,
       this.code,
       this.name,
       this.phone,
+      this.email,
       this.city,
+      this.region,
       this.lat,
       this.lng,
       this.active,
       this.main,
-      this.address});
+      this.address,
+      @JsonKey(name: 'user_id') this.userId});
 
   factory _$_WarehouseEntity.fromJson(Map<String, dynamic> json) =>
       _$$_WarehouseEntityFromJson(json);
 
-  @override
-  @JsonKey(name: 'user_id')
-  final dynamic userId;
   @override
   final int? id;
   @override
@@ -255,7 +283,11 @@ class _$_WarehouseEntity implements _WarehouseEntity {
   @override
   final String? phone;
   @override
+  final String? email;
+  @override
   final String? city;
+  @override
+  final String? region;
   @override
   final String? lat;
   @override
@@ -266,10 +298,13 @@ class _$_WarehouseEntity implements _WarehouseEntity {
   final String? main;
   @override
   final String? address;
+  @override
+  @JsonKey(name: 'user_id')
+  final int? userId;
 
   @override
   String toString() {
-    return 'WarehouseEntity(userId: $userId, id: $id, code: $code, name: $name, phone: $phone, city: $city, lat: $lat, lng: $lng, active: $active, main: $main, address: $address)';
+    return 'WarehouseEntity(id: $id, code: $code, name: $name, phone: $phone, email: $email, city: $city, region: $region, lat: $lat, lng: $lng, active: $active, main: $main, address: $address, userId: $userId)';
   }
 
   @override
@@ -277,34 +312,25 @@ class _$_WarehouseEntity implements _WarehouseEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WarehouseEntity &&
-            const DeepCollectionEquality().equals(other.userId, userId) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.city, city) || other.city == city) &&
+            (identical(other.region, region) || other.region == region) &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.lng, lng) || other.lng == lng) &&
             (identical(other.active, active) || other.active == active) &&
             (identical(other.main, main) || other.main == main) &&
-            (identical(other.address, address) || other.address == address));
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(userId),
-      id,
-      code,
-      name,
-      phone,
-      city,
-      lat,
-      lng,
-      active,
-      main,
-      address);
+  int get hashCode => Object.hash(runtimeType, id, code, name, phone, email,
+      city, region, lat, lng, active, main, address, userId);
 
   @JsonKey(ignore: true)
   @override
@@ -322,24 +348,23 @@ class _$_WarehouseEntity implements _WarehouseEntity {
 
 abstract class _WarehouseEntity implements WarehouseEntity {
   factory _WarehouseEntity(
-      {@JsonKey(name: 'user_id') final dynamic userId,
-      final int? id,
+      {final int? id,
       final String? code,
       final String? name,
       final String? phone,
+      final String? email,
       final String? city,
+      final String? region,
       final String? lat,
       final String? lng,
       final String? active,
       final String? main,
-      final String? address}) = _$_WarehouseEntity;
+      final String? address,
+      @JsonKey(name: 'user_id') final int? userId}) = _$_WarehouseEntity;
 
   factory _WarehouseEntity.fromJson(Map<String, dynamic> json) =
       _$_WarehouseEntity.fromJson;
 
-  @override
-  @JsonKey(name: 'user_id')
-  dynamic get userId;
   @override
   int? get id;
   @override
@@ -349,7 +374,11 @@ abstract class _WarehouseEntity implements WarehouseEntity {
   @override
   String? get phone;
   @override
+  String? get email;
+  @override
   String? get city;
+  @override
+  String? get region;
   @override
   String? get lat;
   @override
@@ -360,6 +389,9 @@ abstract class _WarehouseEntity implements WarehouseEntity {
   String? get main;
   @override
   String? get address;
+  @override
+  @JsonKey(name: 'user_id')
+  int? get userId;
   @override
   @JsonKey(ignore: true)
   _$$_WarehouseEntityCopyWith<_$_WarehouseEntity> get copyWith =>

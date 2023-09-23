@@ -18,39 +18,51 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$OrdersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() orders,
-    required TResult Function() reset,
+    required TResult Function() getOrders,
+    required TResult Function() getPastOrders,
+    required TResult Function() currentOrderReset,
+    required TResult Function() pastOrderReset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? orders,
-    TResult? Function()? reset,
+    TResult? Function()? getOrders,
+    TResult? Function()? getPastOrders,
+    TResult? Function()? currentOrderReset,
+    TResult? Function()? pastOrderReset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? orders,
-    TResult Function()? reset,
+    TResult Function()? getOrders,
+    TResult Function()? getPastOrders,
+    TResult Function()? currentOrderReset,
+    TResult Function()? pastOrderReset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ShopperGetOrders value) orders,
-    required TResult Function(ShpperOrderReset value) reset,
+    required TResult Function(ShopperGetNewOrders value) getOrders,
+    required TResult Function(ShopperGetPastOrders value) getPastOrders,
+    required TResult Function(NewReset value) currentOrderReset,
+    required TResult Function(PastReset value) pastOrderReset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ShopperGetOrders value)? orders,
-    TResult? Function(ShpperOrderReset value)? reset,
+    TResult? Function(ShopperGetNewOrders value)? getOrders,
+    TResult? Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult? Function(NewReset value)? currentOrderReset,
+    TResult? Function(PastReset value)? pastOrderReset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ShopperGetOrders value)? orders,
-    TResult Function(ShpperOrderReset value)? reset,
+    TResult Function(ShopperGetNewOrders value)? getOrders,
+    TResult Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult Function(NewReset value)? currentOrderReset,
+    TResult Function(PastReset value)? pastOrderReset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,35 +87,35 @@ class _$OrdersEventCopyWithImpl<$Res, $Val extends OrdersEvent>
 }
 
 /// @nodoc
-abstract class _$$ShopperGetOrdersCopyWith<$Res> {
-  factory _$$ShopperGetOrdersCopyWith(
-          _$ShopperGetOrders value, $Res Function(_$ShopperGetOrders) then) =
-      __$$ShopperGetOrdersCopyWithImpl<$Res>;
+abstract class _$$ShopperGetNewOrdersCopyWith<$Res> {
+  factory _$$ShopperGetNewOrdersCopyWith(_$ShopperGetNewOrders value,
+          $Res Function(_$ShopperGetNewOrders) then) =
+      __$$ShopperGetNewOrdersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ShopperGetOrdersCopyWithImpl<$Res>
-    extends _$OrdersEventCopyWithImpl<$Res, _$ShopperGetOrders>
-    implements _$$ShopperGetOrdersCopyWith<$Res> {
-  __$$ShopperGetOrdersCopyWithImpl(
-      _$ShopperGetOrders _value, $Res Function(_$ShopperGetOrders) _then)
+class __$$ShopperGetNewOrdersCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$ShopperGetNewOrders>
+    implements _$$ShopperGetNewOrdersCopyWith<$Res> {
+  __$$ShopperGetNewOrdersCopyWithImpl(
+      _$ShopperGetNewOrders _value, $Res Function(_$ShopperGetNewOrders) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ShopperGetOrders implements ShopperGetOrders {
-  const _$ShopperGetOrders();
+class _$ShopperGetNewOrders implements ShopperGetNewOrders {
+  const _$ShopperGetNewOrders();
 
   @override
   String toString() {
-    return 'OrdersEvent.orders()';
+    return 'OrdersEvent.getOrders()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ShopperGetOrders);
+        (other.runtimeType == runtimeType && other is _$ShopperGetNewOrders);
   }
 
   @override
@@ -112,30 +124,36 @@ class _$ShopperGetOrders implements ShopperGetOrders {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() orders,
-    required TResult Function() reset,
+    required TResult Function() getOrders,
+    required TResult Function() getPastOrders,
+    required TResult Function() currentOrderReset,
+    required TResult Function() pastOrderReset,
   }) {
-    return orders();
+    return getOrders();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? orders,
-    TResult? Function()? reset,
+    TResult? Function()? getOrders,
+    TResult? Function()? getPastOrders,
+    TResult? Function()? currentOrderReset,
+    TResult? Function()? pastOrderReset,
   }) {
-    return orders?.call();
+    return getOrders?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? orders,
-    TResult Function()? reset,
+    TResult Function()? getOrders,
+    TResult Function()? getPastOrders,
+    TResult Function()? currentOrderReset,
+    TResult Function()? pastOrderReset,
     required TResult orElse(),
   }) {
-    if (orders != null) {
-      return orders();
+    if (getOrders != null) {
+      return getOrders();
     }
     return orElse();
   }
@@ -143,69 +161,75 @@ class _$ShopperGetOrders implements ShopperGetOrders {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ShopperGetOrders value) orders,
-    required TResult Function(ShpperOrderReset value) reset,
+    required TResult Function(ShopperGetNewOrders value) getOrders,
+    required TResult Function(ShopperGetPastOrders value) getPastOrders,
+    required TResult Function(NewReset value) currentOrderReset,
+    required TResult Function(PastReset value) pastOrderReset,
   }) {
-    return orders(this);
+    return getOrders(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ShopperGetOrders value)? orders,
-    TResult? Function(ShpperOrderReset value)? reset,
+    TResult? Function(ShopperGetNewOrders value)? getOrders,
+    TResult? Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult? Function(NewReset value)? currentOrderReset,
+    TResult? Function(PastReset value)? pastOrderReset,
   }) {
-    return orders?.call(this);
+    return getOrders?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ShopperGetOrders value)? orders,
-    TResult Function(ShpperOrderReset value)? reset,
+    TResult Function(ShopperGetNewOrders value)? getOrders,
+    TResult Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult Function(NewReset value)? currentOrderReset,
+    TResult Function(PastReset value)? pastOrderReset,
     required TResult orElse(),
   }) {
-    if (orders != null) {
-      return orders(this);
+    if (getOrders != null) {
+      return getOrders(this);
     }
     return orElse();
   }
 }
 
-abstract class ShopperGetOrders implements OrdersEvent {
-  const factory ShopperGetOrders() = _$ShopperGetOrders;
+abstract class ShopperGetNewOrders implements OrdersEvent {
+  const factory ShopperGetNewOrders() = _$ShopperGetNewOrders;
 }
 
 /// @nodoc
-abstract class _$$ShpperOrderResetCopyWith<$Res> {
-  factory _$$ShpperOrderResetCopyWith(
-          _$ShpperOrderReset value, $Res Function(_$ShpperOrderReset) then) =
-      __$$ShpperOrderResetCopyWithImpl<$Res>;
+abstract class _$$ShopperGetPastOrdersCopyWith<$Res> {
+  factory _$$ShopperGetPastOrdersCopyWith(_$ShopperGetPastOrders value,
+          $Res Function(_$ShopperGetPastOrders) then) =
+      __$$ShopperGetPastOrdersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ShpperOrderResetCopyWithImpl<$Res>
-    extends _$OrdersEventCopyWithImpl<$Res, _$ShpperOrderReset>
-    implements _$$ShpperOrderResetCopyWith<$Res> {
-  __$$ShpperOrderResetCopyWithImpl(
-      _$ShpperOrderReset _value, $Res Function(_$ShpperOrderReset) _then)
+class __$$ShopperGetPastOrdersCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$ShopperGetPastOrders>
+    implements _$$ShopperGetPastOrdersCopyWith<$Res> {
+  __$$ShopperGetPastOrdersCopyWithImpl(_$ShopperGetPastOrders _value,
+      $Res Function(_$ShopperGetPastOrders) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ShpperOrderReset implements ShpperOrderReset {
-  const _$ShpperOrderReset();
+class _$ShopperGetPastOrders implements ShopperGetPastOrders {
+  const _$ShopperGetPastOrders();
 
   @override
   String toString() {
-    return 'OrdersEvent.reset()';
+    return 'OrdersEvent.getPastOrders()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ShpperOrderReset);
+        (other.runtimeType == runtimeType && other is _$ShopperGetPastOrders);
   }
 
   @override
@@ -214,30 +238,36 @@ class _$ShpperOrderReset implements ShpperOrderReset {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() orders,
-    required TResult Function() reset,
+    required TResult Function() getOrders,
+    required TResult Function() getPastOrders,
+    required TResult Function() currentOrderReset,
+    required TResult Function() pastOrderReset,
   }) {
-    return reset();
+    return getPastOrders();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? orders,
-    TResult? Function()? reset,
+    TResult? Function()? getOrders,
+    TResult? Function()? getPastOrders,
+    TResult? Function()? currentOrderReset,
+    TResult? Function()? pastOrderReset,
   }) {
-    return reset?.call();
+    return getPastOrders?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? orders,
-    TResult Function()? reset,
+    TResult Function()? getOrders,
+    TResult Function()? getPastOrders,
+    TResult Function()? currentOrderReset,
+    TResult Function()? pastOrderReset,
     required TResult orElse(),
   }) {
-    if (reset != null) {
-      return reset();
+    if (getPastOrders != null) {
+      return getPastOrders();
     }
     return orElse();
   }
@@ -245,43 +275,278 @@ class _$ShpperOrderReset implements ShpperOrderReset {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ShopperGetOrders value) orders,
-    required TResult Function(ShpperOrderReset value) reset,
+    required TResult Function(ShopperGetNewOrders value) getOrders,
+    required TResult Function(ShopperGetPastOrders value) getPastOrders,
+    required TResult Function(NewReset value) currentOrderReset,
+    required TResult Function(PastReset value) pastOrderReset,
   }) {
-    return reset(this);
+    return getPastOrders(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ShopperGetOrders value)? orders,
-    TResult? Function(ShpperOrderReset value)? reset,
+    TResult? Function(ShopperGetNewOrders value)? getOrders,
+    TResult? Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult? Function(NewReset value)? currentOrderReset,
+    TResult? Function(PastReset value)? pastOrderReset,
   }) {
-    return reset?.call(this);
+    return getPastOrders?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ShopperGetOrders value)? orders,
-    TResult Function(ShpperOrderReset value)? reset,
+    TResult Function(ShopperGetNewOrders value)? getOrders,
+    TResult Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult Function(NewReset value)? currentOrderReset,
+    TResult Function(PastReset value)? pastOrderReset,
     required TResult orElse(),
   }) {
-    if (reset != null) {
-      return reset(this);
+    if (getPastOrders != null) {
+      return getPastOrders(this);
     }
     return orElse();
   }
 }
 
-abstract class ShpperOrderReset implements OrdersEvent {
-  const factory ShpperOrderReset() = _$ShpperOrderReset;
+abstract class ShopperGetPastOrders implements OrdersEvent {
+  const factory ShopperGetPastOrders() = _$ShopperGetPastOrders;
+}
+
+/// @nodoc
+abstract class _$$NewResetCopyWith<$Res> {
+  factory _$$NewResetCopyWith(
+          _$NewReset value, $Res Function(_$NewReset) then) =
+      __$$NewResetCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NewResetCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$NewReset>
+    implements _$$NewResetCopyWith<$Res> {
+  __$$NewResetCopyWithImpl(_$NewReset _value, $Res Function(_$NewReset) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$NewReset implements NewReset {
+  const _$NewReset();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.currentOrderReset()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NewReset);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getOrders,
+    required TResult Function() getPastOrders,
+    required TResult Function() currentOrderReset,
+    required TResult Function() pastOrderReset,
+  }) {
+    return currentOrderReset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getOrders,
+    TResult? Function()? getPastOrders,
+    TResult? Function()? currentOrderReset,
+    TResult? Function()? pastOrderReset,
+  }) {
+    return currentOrderReset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getOrders,
+    TResult Function()? getPastOrders,
+    TResult Function()? currentOrderReset,
+    TResult Function()? pastOrderReset,
+    required TResult orElse(),
+  }) {
+    if (currentOrderReset != null) {
+      return currentOrderReset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ShopperGetNewOrders value) getOrders,
+    required TResult Function(ShopperGetPastOrders value) getPastOrders,
+    required TResult Function(NewReset value) currentOrderReset,
+    required TResult Function(PastReset value) pastOrderReset,
+  }) {
+    return currentOrderReset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShopperGetNewOrders value)? getOrders,
+    TResult? Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult? Function(NewReset value)? currentOrderReset,
+    TResult? Function(PastReset value)? pastOrderReset,
+  }) {
+    return currentOrderReset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShopperGetNewOrders value)? getOrders,
+    TResult Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult Function(NewReset value)? currentOrderReset,
+    TResult Function(PastReset value)? pastOrderReset,
+    required TResult orElse(),
+  }) {
+    if (currentOrderReset != null) {
+      return currentOrderReset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NewReset implements OrdersEvent {
+  const factory NewReset() = _$NewReset;
+}
+
+/// @nodoc
+abstract class _$$PastResetCopyWith<$Res> {
+  factory _$$PastResetCopyWith(
+          _$PastReset value, $Res Function(_$PastReset) then) =
+      __$$PastResetCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PastResetCopyWithImpl<$Res>
+    extends _$OrdersEventCopyWithImpl<$Res, _$PastReset>
+    implements _$$PastResetCopyWith<$Res> {
+  __$$PastResetCopyWithImpl(
+      _$PastReset _value, $Res Function(_$PastReset) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PastReset implements PastReset {
+  const _$PastReset();
+
+  @override
+  String toString() {
+    return 'OrdersEvent.pastOrderReset()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PastReset);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getOrders,
+    required TResult Function() getPastOrders,
+    required TResult Function() currentOrderReset,
+    required TResult Function() pastOrderReset,
+  }) {
+    return pastOrderReset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getOrders,
+    TResult? Function()? getPastOrders,
+    TResult? Function()? currentOrderReset,
+    TResult? Function()? pastOrderReset,
+  }) {
+    return pastOrderReset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getOrders,
+    TResult Function()? getPastOrders,
+    TResult Function()? currentOrderReset,
+    TResult Function()? pastOrderReset,
+    required TResult orElse(),
+  }) {
+    if (pastOrderReset != null) {
+      return pastOrderReset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ShopperGetNewOrders value) getOrders,
+    required TResult Function(ShopperGetPastOrders value) getPastOrders,
+    required TResult Function(NewReset value) currentOrderReset,
+    required TResult Function(PastReset value) pastOrderReset,
+  }) {
+    return pastOrderReset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShopperGetNewOrders value)? getOrders,
+    TResult? Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult? Function(NewReset value)? currentOrderReset,
+    TResult? Function(PastReset value)? pastOrderReset,
+  }) {
+    return pastOrderReset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShopperGetNewOrders value)? getOrders,
+    TResult Function(ShopperGetPastOrders value)? getPastOrders,
+    TResult Function(NewReset value)? currentOrderReset,
+    TResult Function(PastReset value)? pastOrderReset,
+    required TResult orElse(),
+  }) {
+    if (pastOrderReset != null) {
+      return pastOrderReset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PastReset implements OrdersEvent {
+  const factory PastReset() = _$PastReset;
 }
 
 /// @nodoc
 mixin _$OrdersState {
-  ShopperDataStatus get status => throw _privateConstructorUsedError;
-  List<OrderEntity> get orders => throw _privateConstructorUsedError;
+  ShNewOrdersStatus get newOrdersStatus => throw _privateConstructorUsedError;
+  ShPastOrdersStatus get pastOrdersStatus => throw _privateConstructorUsedError;
+  List<OrderEntity> get newOrders => throw _privateConstructorUsedError;
+  List<OrderEntity> get pastOrders => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -296,7 +561,11 @@ abstract class $OrdersStateCopyWith<$Res> {
       _$OrdersStateCopyWithImpl<$Res, OrdersState>;
   @useResult
   $Res call(
-      {ShopperDataStatus status, List<OrderEntity> orders, String? message});
+      {ShNewOrdersStatus newOrdersStatus,
+      ShPastOrdersStatus pastOrdersStatus,
+      List<OrderEntity> newOrders,
+      List<OrderEntity> pastOrders,
+      String? message});
 }
 
 /// @nodoc
@@ -312,18 +581,28 @@ class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = null,
-    Object? orders = null,
+    Object? newOrdersStatus = null,
+    Object? pastOrdersStatus = null,
+    Object? newOrders = null,
+    Object? pastOrders = null,
     Object? message = freezed,
   }) {
     return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as ShopperDataStatus,
-      orders: null == orders
-          ? _value.orders
-          : orders // ignore: cast_nullable_to_non_nullable
+      newOrdersStatus: null == newOrdersStatus
+          ? _value.newOrdersStatus
+          : newOrdersStatus // ignore: cast_nullable_to_non_nullable
+              as ShNewOrdersStatus,
+      pastOrdersStatus: null == pastOrdersStatus
+          ? _value.pastOrdersStatus
+          : pastOrdersStatus // ignore: cast_nullable_to_non_nullable
+              as ShPastOrdersStatus,
+      newOrders: null == newOrders
+          ? _value.newOrders
+          : newOrders // ignore: cast_nullable_to_non_nullable
+              as List<OrderEntity>,
+      pastOrders: null == pastOrders
+          ? _value.pastOrders
+          : pastOrders // ignore: cast_nullable_to_non_nullable
               as List<OrderEntity>,
       message: freezed == message
           ? _value.message
@@ -342,7 +621,11 @@ abstract class _$$_OrdersStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ShopperDataStatus status, List<OrderEntity> orders, String? message});
+      {ShNewOrdersStatus newOrdersStatus,
+      ShPastOrdersStatus pastOrdersStatus,
+      List<OrderEntity> newOrders,
+      List<OrderEntity> pastOrders,
+      String? message});
 }
 
 /// @nodoc
@@ -356,18 +639,28 @@ class __$$_OrdersStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = null,
-    Object? orders = null,
+    Object? newOrdersStatus = null,
+    Object? pastOrdersStatus = null,
+    Object? newOrders = null,
+    Object? pastOrders = null,
     Object? message = freezed,
   }) {
     return _then(_$_OrdersState(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as ShopperDataStatus,
-      orders: null == orders
-          ? _value._orders
-          : orders // ignore: cast_nullable_to_non_nullable
+      newOrdersStatus: null == newOrdersStatus
+          ? _value.newOrdersStatus
+          : newOrdersStatus // ignore: cast_nullable_to_non_nullable
+              as ShNewOrdersStatus,
+      pastOrdersStatus: null == pastOrdersStatus
+          ? _value.pastOrdersStatus
+          : pastOrdersStatus // ignore: cast_nullable_to_non_nullable
+              as ShPastOrdersStatus,
+      newOrders: null == newOrders
+          ? _value._newOrders
+          : newOrders // ignore: cast_nullable_to_non_nullable
+              as List<OrderEntity>,
+      pastOrders: null == pastOrders
+          ? _value._pastOrders
+          : pastOrders // ignore: cast_nullable_to_non_nullable
               as List<OrderEntity>,
       message: freezed == message
           ? _value.message
@@ -381,20 +674,33 @@ class __$$_OrdersStateCopyWithImpl<$Res>
 
 class _$_OrdersState extends _OrdersState {
   const _$_OrdersState(
-      {required this.status,
-      required final List<OrderEntity> orders,
+      {required this.newOrdersStatus,
+      required this.pastOrdersStatus,
+      required final List<OrderEntity> newOrders,
+      required final List<OrderEntity> pastOrders,
       this.message})
-      : _orders = orders,
+      : _newOrders = newOrders,
+        _pastOrders = pastOrders,
         super._();
 
   @override
-  final ShopperDataStatus status;
-  final List<OrderEntity> _orders;
+  final ShNewOrdersStatus newOrdersStatus;
   @override
-  List<OrderEntity> get orders {
-    if (_orders is EqualUnmodifiableListView) return _orders;
+  final ShPastOrdersStatus pastOrdersStatus;
+  final List<OrderEntity> _newOrders;
+  @override
+  List<OrderEntity> get newOrders {
+    if (_newOrders is EqualUnmodifiableListView) return _newOrders;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_orders);
+    return EqualUnmodifiableListView(_newOrders);
+  }
+
+  final List<OrderEntity> _pastOrders;
+  @override
+  List<OrderEntity> get pastOrders {
+    if (_pastOrders is EqualUnmodifiableListView) return _pastOrders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_pastOrders);
   }
 
   @override
@@ -402,7 +708,7 @@ class _$_OrdersState extends _OrdersState {
 
   @override
   String toString() {
-    return 'OrdersState(status: $status, orders: $orders, message: $message)';
+    return 'OrdersState(newOrdersStatus: $newOrdersStatus, pastOrdersStatus: $pastOrdersStatus, newOrders: $newOrders, pastOrders: $pastOrders, message: $message)';
   }
 
   @override
@@ -410,14 +716,25 @@ class _$_OrdersState extends _OrdersState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OrdersState &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality().equals(other._orders, _orders) &&
+            (identical(other.newOrdersStatus, newOrdersStatus) ||
+                other.newOrdersStatus == newOrdersStatus) &&
+            (identical(other.pastOrdersStatus, pastOrdersStatus) ||
+                other.pastOrdersStatus == pastOrdersStatus) &&
+            const DeepCollectionEquality()
+                .equals(other._newOrders, _newOrders) &&
+            const DeepCollectionEquality()
+                .equals(other._pastOrders, _pastOrders) &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status,
-      const DeepCollectionEquality().hash(_orders), message);
+  int get hashCode => Object.hash(
+      runtimeType,
+      newOrdersStatus,
+      pastOrdersStatus,
+      const DeepCollectionEquality().hash(_newOrders),
+      const DeepCollectionEquality().hash(_pastOrders),
+      message);
 
   @JsonKey(ignore: true)
   @override
@@ -428,15 +745,21 @@ class _$_OrdersState extends _OrdersState {
 
 abstract class _OrdersState extends OrdersState {
   const factory _OrdersState(
-      {required final ShopperDataStatus status,
-      required final List<OrderEntity> orders,
+      {required final ShNewOrdersStatus newOrdersStatus,
+      required final ShPastOrdersStatus pastOrdersStatus,
+      required final List<OrderEntity> newOrders,
+      required final List<OrderEntity> pastOrders,
       final String? message}) = _$_OrdersState;
   const _OrdersState._() : super._();
 
   @override
-  ShopperDataStatus get status;
+  ShNewOrdersStatus get newOrdersStatus;
   @override
-  List<OrderEntity> get orders;
+  ShPastOrdersStatus get pastOrdersStatus;
+  @override
+  List<OrderEntity> get newOrders;
+  @override
+  List<OrderEntity> get pastOrders;
   @override
   String? get message;
   @override

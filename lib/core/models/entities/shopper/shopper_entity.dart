@@ -7,15 +7,18 @@ part 'shopper_entity.g.dart';
 class ShopperEntity with _$ShopperEntity {
   factory ShopperEntity({
     int? id,
-    @JsonKey(name: 'user_id') int? userId,
-    @JsonKey(name: 'market_id') int? marketId,
     String? latitude,
     String? longitude,
     String? address,
     String? city,
+    String? region,
     String? name,
     String? phone,
     String? commission,
+    String? network,
+    @JsonKey(name: 'user_id') int? userId,
+    @JsonKey(name: 'market_id') int? marketId,
+    @JsonKey(name: 'momo_number') String? momoNumber,
   }) = _ShopperEntity;
 
   factory ShopperEntity.fromJson(Map<String, dynamic> json) =>
