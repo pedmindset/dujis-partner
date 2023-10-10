@@ -1,4 +1,5 @@
 import 'package:animation_wrappers/animation_wrappers.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dujis_partner/core/models/models.dart';
 import 'package:dujis_partner/src/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,7 +16,6 @@ class OrderInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // log(orderEntity.toString());
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(50.0),
@@ -188,7 +188,21 @@ class OrderInfo extends StatelessWidget {
                               borderRadius: BorderRadius.circular(22.0),
                               color: Colors.grey[200],
                             ),
-                            child: const Icon(CupertinoIcons.person_alt),
+                            // child: Text(orderEntity.user!.profile.toString()),
+                            child: orderEntity.user!.profile != null &&
+                                    orderEntity
+                                        .user!.profile!.profileImage!.isNotEmpty
+                                ? CachedNetworkImage(
+                                    imageUrl: orderEntity
+                                        .user!.profile!.profileImage!,
+                                    fit: BoxFit.cover,
+                                    placeholder: (context, url) =>
+                                        const CircularProgressIndicator(),
+                                    errorWidget: (context, url, error) =>
+                                        const Icon(Icons.error),
+                                  )
+                                : const Icon(CupertinoIcons.person_alt),
+                            // child: const Icon(CupertinoIcons.person_alt),
                             // radius: 22.0,
                             // backgroundImage:
                             //     AssetImage('assets/images/other/profile.png'),

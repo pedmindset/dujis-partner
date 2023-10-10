@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dujis_partner/core/models/models.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,20 @@ class LineItem extends StatelessWidget {
                 builder: (BuildContext context) => AssignMarketScreen(
                   productEntity: productEntity,
                   orderId: orderEntity.id!,
+                  marketId: orderEntity.marketId!,
                 ),
+              ),
+            ),
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: CachedNetworkImage(
+                imageUrl: productEntity.coverPhoto!,
+                width: 60,
+                height: 80,
+                fit: BoxFit.cover,
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
             title: Text(

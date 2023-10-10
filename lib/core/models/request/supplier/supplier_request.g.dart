@@ -8,10 +8,12 @@ part of 'supplier_request.dart';
 
 _$_SupplierRequest _$$_SupplierRequestFromJson(Map<String, dynamic> json) =>
     _$_SupplierRequest(
-      product: json['product'] as String,
+      productId: json['productId'] as String,
+      marketId: json['marketId'] as String,
     );
 
 Map<String, dynamic> _$$_SupplierRequestToJson(_$_SupplierRequest instance) =>
     <String, dynamic>{
-      'product': instance.product,
+      'productId': instance.productId,
+      'marketId': instance.marketId,
     };

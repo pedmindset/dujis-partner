@@ -9,15 +9,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AssignMarketScreen extends StatelessWidget {
   const AssignMarketScreen(
-      {super.key, required this.productEntity, required this.orderId});
+      {super.key,
+      required this.productEntity,
+      required this.orderId,
+      required this.marketId});
 
   final int orderId;
+  final int marketId;
   final ProductEntity productEntity;
 
   @override
   Widget build(BuildContext context) {
     final suppliersBloc = context.read<ShoppersBloc>();
-    final request = SupplierRequest(product: productEntity.id.toString());
+    final request = SupplierRequest(
+        productId: productEntity.id.toString(), marketId: marketId.toString());
     return StartupContainer(
       onInit: () {
         suppliersBloc.add(GetSuppliers(request));
@@ -65,6 +70,17 @@ class AssignMarketScreen extends StatelessWidget {
                 ),
               );
               Navigator.of(context).popUntil((_) => count++ >= 2);
+            }
+            if (state.assignStatus.isAssignError) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  backgroundColor: Colors.red[100],
+                  content: Text(
+                    state.assignResponse.toString(),
+                    style: TextStyle(color: Colors.red[800]),
+                  ),
+                ),
+              );
             }
           },
           builder: (context, state) {
@@ -151,10 +167,10 @@ class AssignMarketScreen extends StatelessWidget {
                                           InkWell(
                                             onTap: () {
                                               final request = AssignedRequest(
-                                                  order: orderId.toString(),
-                                                  product: productEntity.id
+                                                  orderId: orderId.toString(),
+                                                  productId: productEntity.id
                                                       .toString(),
-                                                  supplier:
+                                                  supplierId:
                                                       supplier.id.toString());
                                               suppliersBloc
                                                   .add(AssignSupplier(request));
@@ -172,9 +188,12 @@ class AssignMarketScreen extends StatelessWidget {
                                               child: Center(
                                                 child: Text(
                                                   suppliersBloc
-                                                          .state
-                                                          .assignStatus
-                                                          .isAssignLoading
+                                                              .state
+                                                              .assignStatus
+                                                              .isAssignLoading &&
+                                                          state.assignId ==
+                                                              supplier.id
+                                                                  .toString()
                                                       ? 'Loading...'
                                                       : 'Assign',
                                                   style: Theme.of(context)

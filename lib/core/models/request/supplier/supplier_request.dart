@@ -6,7 +6,8 @@ part 'supplier_request.g.dart';
 @freezed
 class SupplierRequest with _$SupplierRequest {
   factory SupplierRequest({
-    required String product,
+    required String productId,
+    required String marketId,
   }) = _SupplierRequest;
 
   factory SupplierRequest.fromJson(Map<String, dynamic> json) =>

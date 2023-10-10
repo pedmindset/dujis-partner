@@ -14,6 +14,7 @@ _$_ProductEntity _$$_ProductEntityFromJson(Map<String, dynamic> json) =>
       pivot: json['pivot'] == null
           ? null
           : ProductPivotEntity.fromJson(json['pivot'] as Map<String, dynamic>),
+      coverPhoto: json['cover_photo'] as String?,
     );
 
 Map<String, dynamic> _$$_ProductEntityToJson(_$_ProductEntity instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$_ProductEntityToJson(_$_ProductEntity instance) =>
       'market': instance.market,
       'name': instance.name,
       'pivot': instance.pivot,
+      'cover_photo': instance.coverPhoto,
     };

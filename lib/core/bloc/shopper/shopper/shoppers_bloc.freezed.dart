@@ -821,6 +821,7 @@ mixin _$ShoppersState {
   ShopperDataStatus get packagedStatus => throw _privateConstructorUsedError;
   ShopperDataStatus get suppliersStatus => throw _privateConstructorUsedError;
   List<SupplierEntity> get suppliers => throw _privateConstructorUsedError;
+  String? get assignId => throw _privateConstructorUsedError;
   String? get assignResponse => throw _privateConstructorUsedError;
   String? get packagedResponse => throw _privateConstructorUsedError;
   String? get supplierResponse => throw _privateConstructorUsedError;
@@ -841,6 +842,7 @@ abstract class $ShoppersStateCopyWith<$Res> {
       ShopperDataStatus packagedStatus,
       ShopperDataStatus suppliersStatus,
       List<SupplierEntity> suppliers,
+      String? assignId,
       String? assignResponse,
       String? packagedResponse,
       String? supplierResponse});
@@ -863,6 +865,7 @@ class _$ShoppersStateCopyWithImpl<$Res, $Val extends ShoppersState>
     Object? packagedStatus = null,
     Object? suppliersStatus = null,
     Object? suppliers = null,
+    Object? assignId = freezed,
     Object? assignResponse = freezed,
     Object? packagedResponse = freezed,
     Object? supplierResponse = freezed,
@@ -884,6 +887,10 @@ class _$ShoppersStateCopyWithImpl<$Res, $Val extends ShoppersState>
           ? _value.suppliers
           : suppliers // ignore: cast_nullable_to_non_nullable
               as List<SupplierEntity>,
+      assignId: freezed == assignId
+          ? _value.assignId
+          : assignId // ignore: cast_nullable_to_non_nullable
+              as String?,
       assignResponse: freezed == assignResponse
           ? _value.assignResponse
           : assignResponse // ignore: cast_nullable_to_non_nullable
@@ -913,6 +920,7 @@ abstract class _$$_ShoppersStateCopyWith<$Res>
       ShopperDataStatus packagedStatus,
       ShopperDataStatus suppliersStatus,
       List<SupplierEntity> suppliers,
+      String? assignId,
       String? assignResponse,
       String? packagedResponse,
       String? supplierResponse});
@@ -933,6 +941,7 @@ class __$$_ShoppersStateCopyWithImpl<$Res>
     Object? packagedStatus = null,
     Object? suppliersStatus = null,
     Object? suppliers = null,
+    Object? assignId = freezed,
     Object? assignResponse = freezed,
     Object? packagedResponse = freezed,
     Object? supplierResponse = freezed,
@@ -954,6 +963,10 @@ class __$$_ShoppersStateCopyWithImpl<$Res>
           ? _value._suppliers
           : suppliers // ignore: cast_nullable_to_non_nullable
               as List<SupplierEntity>,
+      assignId: freezed == assignId
+          ? _value.assignId
+          : assignId // ignore: cast_nullable_to_non_nullable
+              as String?,
       assignResponse: freezed == assignResponse
           ? _value.assignResponse
           : assignResponse // ignore: cast_nullable_to_non_nullable
@@ -978,6 +991,7 @@ class _$_ShoppersState extends _ShoppersState {
       required this.packagedStatus,
       required this.suppliersStatus,
       required final List<SupplierEntity> suppliers,
+      this.assignId,
       this.assignResponse,
       this.packagedResponse,
       this.supplierResponse})
@@ -999,6 +1013,8 @@ class _$_ShoppersState extends _ShoppersState {
   }
 
   @override
+  final String? assignId;
+  @override
   final String? assignResponse;
   @override
   final String? packagedResponse;
@@ -1007,7 +1023,7 @@ class _$_ShoppersState extends _ShoppersState {
 
   @override
   String toString() {
-    return 'ShoppersState(assignStatus: $assignStatus, packagedStatus: $packagedStatus, suppliersStatus: $suppliersStatus, suppliers: $suppliers, assignResponse: $assignResponse, packagedResponse: $packagedResponse, supplierResponse: $supplierResponse)';
+    return 'ShoppersState(assignStatus: $assignStatus, packagedStatus: $packagedStatus, suppliersStatus: $suppliersStatus, suppliers: $suppliers, assignId: $assignId, assignResponse: $assignResponse, packagedResponse: $packagedResponse, supplierResponse: $supplierResponse)';
   }
 
   @override
@@ -1023,6 +1039,8 @@ class _$_ShoppersState extends _ShoppersState {
                 other.suppliersStatus == suppliersStatus) &&
             const DeepCollectionEquality()
                 .equals(other._suppliers, _suppliers) &&
+            (identical(other.assignId, assignId) ||
+                other.assignId == assignId) &&
             (identical(other.assignResponse, assignResponse) ||
                 other.assignResponse == assignResponse) &&
             (identical(other.packagedResponse, packagedResponse) ||
@@ -1038,6 +1056,7 @@ class _$_ShoppersState extends _ShoppersState {
       packagedStatus,
       suppliersStatus,
       const DeepCollectionEquality().hash(_suppliers),
+      assignId,
       assignResponse,
       packagedResponse,
       supplierResponse);
@@ -1055,6 +1074,7 @@ abstract class _ShoppersState extends ShoppersState {
       required final ShopperDataStatus packagedStatus,
       required final ShopperDataStatus suppliersStatus,
       required final List<SupplierEntity> suppliers,
+      final String? assignId,
       final String? assignResponse,
       final String? packagedResponse,
       final String? supplierResponse}) = _$_ShoppersState;
@@ -1068,6 +1088,8 @@ abstract class _ShoppersState extends ShoppersState {
   ShopperDataStatus get suppliersStatus;
   @override
   List<SupplierEntity> get suppliers;
+  @override
+  String? get assignId;
   @override
   String? get assignResponse;
   @override

@@ -39,7 +39,7 @@ class ProductEntity with _$ProductEntity {
     // @JsonKey(name: 'product_category_id') int? productCategoryId,
     // @JsonKey(name: 'brand_id') int? brandId,
     // @JsonKey(name: 'wholesale_price') String? wholesalePrice,
-    // @JsonKey(name: 'cover_photo') String? coverPhoto,
+    @JsonKey(name: 'cover_photo') String? coverPhoto,
   }) = _ProductEntity;
 
   factory ProductEntity.fromJson(Map<String, dynamic> json) =>

@@ -40,7 +40,8 @@ class OrderRepo extends BaseOrderRepository {
   Future<AppResponse<List<SupplierEntity>>> getSuppliers(
       SupplierRequest supplierRequest) async {
     final response = await _dioClient.get(shopperSuppiers, queryParameters: {
-      "product": supplierRequest.product,
+      'market': supplierRequest.marketId,
+      "product": supplierRequest.productId,
     });
 
     return AppResponse<List<SupplierEntity>>.fromJson(

@@ -46,7 +46,9 @@ class ShoppersBloc extends Bloc<ShoppersEvent, ShoppersState> {
     // assign supplier
     on<AssignSupplier>((event, emit) async {
       if (state.assignStatus.isAssignLoading) return;
-      emit(state.copyWith(assignStatus: ShopperDataStatus.assignLoading));
+      emit(state.copyWith(
+          assignStatus: ShopperDataStatus.assignLoading,
+          assignId: event.request.supplierId));
       try {
         final response = await _orderRepo.assignProduct(event.request);
 

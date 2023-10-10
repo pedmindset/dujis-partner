@@ -20,7 +20,8 @@ SupplierRequest _$SupplierRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SupplierRequest {
-  String get product => throw _privateConstructorUsedError;
+  String get productId => throw _privateConstructorUsedError;
+  String get marketId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +35,7 @@ abstract class $SupplierRequestCopyWith<$Res> {
           SupplierRequest value, $Res Function(SupplierRequest) then) =
       _$SupplierRequestCopyWithImpl<$Res, SupplierRequest>;
   @useResult
-  $Res call({String product});
+  $Res call({String productId, String marketId});
 }
 
 /// @nodoc
@@ -50,12 +51,17 @@ class _$SupplierRequestCopyWithImpl<$Res, $Val extends SupplierRequest>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? product = null,
+    Object? productId = null,
+    Object? marketId = null,
   }) {
     return _then(_value.copyWith(
-      product: null == product
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+      marketId: null == marketId
+          ? _value.marketId
+          : marketId // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -69,7 +75,7 @@ abstract class _$$_SupplierRequestCopyWith<$Res>
       __$$_SupplierRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String product});
+  $Res call({String productId, String marketId});
 }
 
 /// @nodoc
@@ -83,12 +89,17 @@ class __$$_SupplierRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? product = null,
+    Object? productId = null,
+    Object? marketId = null,
   }) {
     return _then(_$_SupplierRequest(
-      product: null == product
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+      marketId: null == marketId
+          ? _value.marketId
+          : marketId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -97,17 +108,19 @@ class __$$_SupplierRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SupplierRequest implements _SupplierRequest {
-  _$_SupplierRequest({required this.product});
+  _$_SupplierRequest({required this.productId, required this.marketId});
 
   factory _$_SupplierRequest.fromJson(Map<String, dynamic> json) =>
       _$$_SupplierRequestFromJson(json);
 
   @override
-  final String product;
+  final String productId;
+  @override
+  final String marketId;
 
   @override
   String toString() {
-    return 'SupplierRequest(product: $product)';
+    return 'SupplierRequest(productId: $productId, marketId: $marketId)';
   }
 
   @override
@@ -115,12 +128,15 @@ class _$_SupplierRequest implements _SupplierRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SupplierRequest &&
-            (identical(other.product, product) || other.product == product));
+            (identical(other.productId, productId) ||
+                other.productId == productId) &&
+            (identical(other.marketId, marketId) ||
+                other.marketId == marketId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, product);
+  int get hashCode => Object.hash(runtimeType, productId, marketId);
 
   @JsonKey(ignore: true)
   @override
@@ -137,14 +153,17 @@ class _$_SupplierRequest implements _SupplierRequest {
 }
 
 abstract class _SupplierRequest implements SupplierRequest {
-  factory _SupplierRequest({required final String product}) =
-      _$_SupplierRequest;
+  factory _SupplierRequest(
+      {required final String productId,
+      required final String marketId}) = _$_SupplierRequest;
 
   factory _SupplierRequest.fromJson(Map<String, dynamic> json) =
       _$_SupplierRequest.fromJson;
 
   @override
-  String get product;
+  String get productId;
+  @override
+  String get marketId;
   @override
   @JsonKey(ignore: true)
   _$$_SupplierRequestCopyWith<_$_SupplierRequest> get copyWith =>

@@ -8,14 +8,14 @@ part of 'assigned_request.dart';
 
 _$_AssignedRequest _$$_AssignedRequestFromJson(Map<String, dynamic> json) =>
     _$_AssignedRequest(
-      order: json['order'] as String,
-      product: json['product'] as String,
-      supplier: json['supplier'] as String,
+      orderId: json['orderId'] as String,
+      productId: json['productId'] as String,
+      supplierId: json['supplierId'] as String,
     );
 
 Map<String, dynamic> _$$_AssignedRequestToJson(_$_AssignedRequest instance) =>
     <String, dynamic>{
-      'order': instance.order,
-      'product': instance.product,
-      'supplier': instance.supplier,
+      'orderId': instance.orderId,
+      'productId': instance.productId,
+      'supplierId': instance.supplierId,
     };

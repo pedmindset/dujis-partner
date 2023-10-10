@@ -64,7 +64,7 @@ class NewOrdersPage extends StatelessWidget {
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     final order = state.newOrders[index];
-                    // return Text(order.code.toString());
+
                     return ShopperItem(
                       orderEntity: order,
                     );

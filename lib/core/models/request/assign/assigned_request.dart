@@ -6,9 +6,9 @@ part 'assigned_request.g.dart';
 @freezed
 class AssignedRequest with _$AssignedRequest {
   factory AssignedRequest({
-    required String order,
-    required String product,
-    required String supplier,
+    required String orderId,
+    required String productId,
+    required String supplierId,
   }) = _AssignedRequest;
 
   factory AssignedRequest.fromJson(Map<String, dynamic> json) =>

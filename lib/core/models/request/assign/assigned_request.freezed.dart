@@ -20,9 +20,9 @@ AssignedRequest _$AssignedRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AssignedRequest {
-  String get order => throw _privateConstructorUsedError;
-  String get product => throw _privateConstructorUsedError;
-  String get supplier => throw _privateConstructorUsedError;
+  String get orderId => throw _privateConstructorUsedError;
+  String get productId => throw _privateConstructorUsedError;
+  String get supplierId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $AssignedRequestCopyWith<$Res> {
           AssignedRequest value, $Res Function(AssignedRequest) then) =
       _$AssignedRequestCopyWithImpl<$Res, AssignedRequest>;
   @useResult
-  $Res call({String order, String product, String supplier});
+  $Res call({String orderId, String productId, String supplierId});
 }
 
 /// @nodoc
@@ -52,22 +52,22 @@ class _$AssignedRequestCopyWithImpl<$Res, $Val extends AssignedRequest>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? order = null,
-    Object? product = null,
-    Object? supplier = null,
+    Object? orderId = null,
+    Object? productId = null,
+    Object? supplierId = null,
   }) {
     return _then(_value.copyWith(
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
               as String,
-      product: null == product
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
               as String,
-      supplier: null == supplier
-          ? _value.supplier
-          : supplier // ignore: cast_nullable_to_non_nullable
+      supplierId: null == supplierId
+          ? _value.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -81,7 +81,7 @@ abstract class _$$_AssignedRequestCopyWith<$Res>
       __$$_AssignedRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String order, String product, String supplier});
+  $Res call({String orderId, String productId, String supplierId});
 }
 
 /// @nodoc
@@ -95,22 +95,22 @@ class __$$_AssignedRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? order = null,
-    Object? product = null,
-    Object? supplier = null,
+    Object? orderId = null,
+    Object? productId = null,
+    Object? supplierId = null,
   }) {
     return _then(_$_AssignedRequest(
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
               as String,
-      product: null == product
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
               as String,
-      supplier: null == supplier
-          ? _value.supplier
-          : supplier // ignore: cast_nullable_to_non_nullable
+      supplierId: null == supplierId
+          ? _value.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -120,21 +120,23 @@ class __$$_AssignedRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_AssignedRequest implements _AssignedRequest {
   _$_AssignedRequest(
-      {required this.order, required this.product, required this.supplier});
+      {required this.orderId,
+      required this.productId,
+      required this.supplierId});
 
   factory _$_AssignedRequest.fromJson(Map<String, dynamic> json) =>
       _$$_AssignedRequestFromJson(json);
 
   @override
-  final String order;
+  final String orderId;
   @override
-  final String product;
+  final String productId;
   @override
-  final String supplier;
+  final String supplierId;
 
   @override
   String toString() {
-    return 'AssignedRequest(order: $order, product: $product, supplier: $supplier)';
+    return 'AssignedRequest(orderId: $orderId, productId: $productId, supplierId: $supplierId)';
   }
 
   @override
@@ -142,15 +144,16 @@ class _$_AssignedRequest implements _AssignedRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AssignedRequest &&
-            (identical(other.order, order) || other.order == order) &&
-            (identical(other.product, product) || other.product == product) &&
-            (identical(other.supplier, supplier) ||
-                other.supplier == supplier));
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.productId, productId) ||
+                other.productId == productId) &&
+            (identical(other.supplierId, supplierId) ||
+                other.supplierId == supplierId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, order, product, supplier);
+  int get hashCode => Object.hash(runtimeType, orderId, productId, supplierId);
 
   @JsonKey(ignore: true)
   @override
@@ -168,19 +171,19 @@ class _$_AssignedRequest implements _AssignedRequest {
 
 abstract class _AssignedRequest implements AssignedRequest {
   factory _AssignedRequest(
-      {required final String order,
-      required final String product,
-      required final String supplier}) = _$_AssignedRequest;
+      {required final String orderId,
+      required final String productId,
+      required final String supplierId}) = _$_AssignedRequest;
 
   factory _AssignedRequest.fromJson(Map<String, dynamic> json) =
       _$_AssignedRequest.fromJson;
 
   @override
-  String get order;
+  String get orderId;
   @override
-  String get product;
+  String get productId;
   @override
-  String get supplier;
+  String get supplierId;
   @override
   @JsonKey(ignore: true)
   _$$_AssignedRequestCopyWith<_$_AssignedRequest> get copyWith =>
